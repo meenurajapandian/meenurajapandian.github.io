@@ -1,5 +1,16 @@
-<header>
-
-  {{ site.title }}
-
-</header>
+<!DOCTYPE html>
+<div id="header" class="head">
+    <div style="display: inline-block;">
+        <head>
+            <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css" >
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+            {{ site.title }}
+        </head>
+    </div>
+    <nav id="nav">
+        <a href="/about">About</a>
+        <a href="/posts">Blog</a>
+        <a href="/projects">Projects</a>
+        <a href="/index">Main</a>
+    </nav>
+</div>

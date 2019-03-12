@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 
-  {% include header.html %}
-
-  {{content}}
-
-  {% include footer.html %}
+    <div class="content">
+        {% include header.html %}
+        <div class="content-inside">
+            {{content}}
+        </div>
+    </div> <!--To push the footer to the bottom of the page-->
+    {% include footer.html %}
 
 </html>
