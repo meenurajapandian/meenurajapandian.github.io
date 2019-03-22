@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <div class="content">
+        {% include header.html %}
+        <div class="blog-inside">
+            <h1><b>{{ page.title }}</b></h1>
+            <h6>{{ page.date | date_to_string }}</h6>
+            <div class="blog-content">
+                {{content}}
+            </div>
+        </div>
+    </div> <!--To push the footer to the bottom of the page-->
+    {% include footer.html %}
+</html>

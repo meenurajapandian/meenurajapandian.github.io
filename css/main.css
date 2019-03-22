@@ -73,6 +73,25 @@ nav a:hover {
 
 .content-inside{
   padding-bottom: 10em; /*Trial and Error*/
+  padding-left: 5em;
+}
+
+.blog-inside{
+  padding: 2em;
+  font-family: Arial;
+  line-height: 2em;
+}
+
+.blog-inside h1{
+  font-size: 1.75em;
+}
+
+.blog-inside h6{
+  font-size: 0.75em;
+}
+
+.blog-content{
+  line-height: 1.5em;
 }
 
 .contact{
