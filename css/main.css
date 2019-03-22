@@ -77,7 +77,10 @@ nav a:hover {
 }
 
 .blog-inside{
-  padding: 2em;
+  padding-top: 2em;
+  padding-left: 20em;
+  padding-right: 20em;
+  padding-bottom: 10em; /*Same as that for content-inside*/
   font-family: Arial;
   line-height: 2em;
 }
