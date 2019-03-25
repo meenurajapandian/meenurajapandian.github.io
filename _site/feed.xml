@@ -6,8 +6,8 @@
 </description>
     <link>http://meenurajapandian.github.io/</link>
     <atom:link href="http://meenurajapandian.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 22 Mar 2019 18:40:27 -0400</pubDate>
-    <lastBuildDate>Fri, 22 Mar 2019 18:40:27 -0400</lastBuildDate>
+    <pubDate>Sun, 24 Mar 2019 16:38:40 -0400</pubDate>
+    <lastBuildDate>Sun, 24 Mar 2019 16:38:40 -0400</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -64,7 +64,21 @@ noun&lt;/p&gt;
 
 &lt;p&gt;One of the first paper on community detection methods that I read was the Modularity and Community Structure in Network. The central idea of the paper was that if there are more than expected edges within a module (community) or equivalently, if there are less than expected edges between modules, we can conclude the current segregation is the most optimal method of dividing the network into communities. This is done by maximizing the modularity of the network given by Q = 1/4m &lt;em&gt;insert formula&lt;/em&gt;.  where …..&lt;/p&gt;
 
-&lt;p&gt;Let’s take a deeper look at what the formula represents. The value that is summed is also taken into account when the two nodes i and j belong to the same community. The term rewards when two nodes of relatively low degrees that belong to the same module are directly connected and there is a very small contribution when two nodes of very high degrees are directly connected within the module since it is not a very surprising possibility and still lower value when two nodes have high degrees but are not directly connected(? but shouldn’t this be a higher value since this is surprising possibility but since it is not directly connected it isn’t considered????)  Let’s see how this value changes for different degree pairs that belong in the same module for a network with say a 100 edges.&lt;/p&gt;
+&lt;p&gt;Let’s take a closer look at what the formula represents. The term within the summation is only taken into account when the two nodes i and j belong to the same community. The term is rewarding (towards modularity) when two nodes of relatively low degrees that belong to the same module are directly connected and the least contribution to modularity when two nodes of very high degrees are directly connected within the module since it is not a very surprising possibility. There doesn’t seem to a big difference between nodes that are directly connected and those that aren’t. Let’s consider a network of total edges 100 and see how the different node pairs contribute to the modularity value.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;insert image&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;As we can see there is little difference in the modularity contribution between nodes that are directly connected and those that aren’t. If there are two nodes with a very high degree compared to the other nodes, then they are likely in different communities and they will take along with them the nodes they are directly connected to. We can see it as two rich hubs that have communities of their own. (?)&lt;/p&gt;
+
+&lt;p&gt;Skipping the theory behind how this algorithm came to be from the formula above, the method of dividing the network into 2 communities is as follows:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Find the Modularity matrix B = A - kkT/2m&lt;/li&gt;
+  &lt;li&gt;Compute the eigen value and eigen vector of the modularity matrix B.&lt;/li&gt;
+  &lt;li&gt;The eigen vector corresponding to the highest eigen value represents the communities of the network. All positive values of the vector correspond to one community and the negative values correspond to a different community. If all the positions of this eigen vector have the same sign then they cannot be divided into any communities.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To divide the network into more than two communities or see if it is possible, the same method as above is applied to the different community subgraphs. However there is a small change.&lt;/p&gt;
 </description>
         <pubDate>Fri, 01 Mar 2019 19:20:41 -0500</pubDate>
         <link>http://meenurajapandian.github.io/jekyll/update/2019/03/01/newman-modularity.html</link>
@@ -74,6 +88,485 @@ noun&lt;/p&gt;
         <category>jekyll</category>
         
         <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Overleaftry</title>
+        <description>&lt;!DOCTYPE html&gt; 
+&lt;html&gt; 
+&lt;head&gt; &lt;title&gt;&lt;/title&gt; 
+&lt;meta charset=&quot;UTF-8&quot; /&gt; 
+&lt;meta name=&quot;generator&quot; content=&quot;TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)&quot; /&gt; 
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;main.css&quot; /&gt; 
+&lt;!-- for beautifying --&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;site.css&quot; /&gt; 
+&lt;script type=&quot;text/x-mathjax-config&quot;&gt; MathJax.Hub.Config({ extensions: [&quot;tex2jax.js&quot;], jax: [&quot;input/TeX&quot;, &quot;output/HTML-CSS&quot;], tex2jax: { inlineMath: [ [&#39;$&#39;,&#39;$&#39;], [&quot;\\(&quot;,&quot;\\)&quot;] ], displayMath: [ [&#39;$$&#39;,&#39;$$&#39;], [&quot;\\[&quot;,&quot;\\]&quot;] ], processEscapes: true }, &quot;HTML-CSS&quot;: { availableFonts: [&quot;TeX&quot;] } }); &lt;/script&gt; &lt;script type=&quot;text/javascript&quot; 
+src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; 
+&gt;&lt;/script&gt; 
+&lt;/head&gt;&lt;body 
+&gt;
+   &lt;div class=&quot;maketitle&quot;&gt;
+                                                                     
+
+                                                                     
+                                                                     
+
+                                                                     
+
+&lt;h2 class=&quot;titleHead&quot;&gt;Testing HTML Export with tex4ht&lt;/h2&gt;
+&lt;div class=&quot;author&quot; &gt;&lt;span 
+class=&quot;cmr-12&quot;&gt;LianTze Lim&lt;/span&gt;&lt;/div&gt;&lt;br /&gt;
+&lt;div class=&quot;date&quot; &gt;&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div 
+class=&quot;abstract&quot; 
+&gt;
+&lt;div class=&quot;center&quot; 
+&gt;
+&lt;p&gt;
+&lt;/p&gt; 
+&lt;p&gt;&lt;span 
+class=&quot;cmbx-10&quot;&gt;Abstract&lt;/span&gt;&lt;/p&gt; 
+&lt;/div&gt;
+     &lt;p&gt;   &lt;span 
+class=&quot;cmr-10&quot;&gt;Your abstract. &lt;/span&gt;&lt;span 
+class=&quot;cmr-10&quot;&gt;Ç&lt;/span&gt;&lt;span 
+class=&quot;cmr-10&quot;&gt;a va? (Yes accented characters work.)&lt;/span&gt;
+&lt;/p&gt; 
+&lt;/div&gt;
+   &lt;h3 class=&quot;sectionHead&quot;&gt;&lt;span class=&quot;titlemark&quot;&gt;1   &lt;/span&gt; &lt;a 
+ id=&quot;x1-10001&quot;&gt;&lt;/a&gt;Overview of Steps&lt;/h3&gt;
+&lt;p&gt;
+     &lt;/p&gt; 
+&lt;ol  class=&quot;enumerate1&quot; &gt;
+     &lt;li 
+  class=&quot;enumerate&quot; id=&quot;x1-1002x1&quot;&gt;I  tweaked  the  &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;latexmkrc&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; file  so  that  &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;make4ht&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; is  run  along  with
+     &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;pdflatex&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;, so the HTML export is done only if you set your project to
+     be compiled with &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;pdflatex&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;.
+     &lt;p&gt;(&lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;make4ht&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; doesn&amp;#x2019;t  work  with  &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;fontspec&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;;  I  haven&amp;#x2019;t  time  to  try  this
+     workflow with &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;XeLaTeX&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; nor &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;LuaLaTeX&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; yet. So let&amp;#x2019;s just leave it at
+     &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;pdflatex&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; first, yeah?)
+     &lt;/p&gt; 
+&lt;/li&gt;
+     &lt;li 
+  class=&quot;enumerate&quot; id=&quot;x1-1004x2&quot;&gt;&lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;my.cfg&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; contains the settings I usually use in my workflow:
+          &lt;ul class=&quot;itemize1&quot;&gt;
+          &lt;li class=&quot;itemize&quot;&gt;Output  math  as  MathML,  and  render  it  in  browsers  using
+          MathJax.
+                                                                     
+
+                                                                     
+          &lt;/li&gt;
+          &lt;li class=&quot;itemize&quot;&gt;When &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;\includegraphics&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; uses &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;.jpg&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;.png&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;.jpg&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;.svg&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;, use the
+          files directly for the HTML without conversion.
+          &lt;/li&gt;
+          &lt;li class=&quot;itemize&quot;&gt;When &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;\includegraphics&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; uses &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;.eps&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; and &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;.pdf&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;, convert them to
+          &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;.png&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; using ImageMagick &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;convert&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;, and use those for the HTML.
+          &lt;/li&gt;
+          &lt;li class=&quot;itemize&quot;&gt;Tikz drawings are output as &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;.svg&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; without any extra settings, &lt;span 
+class=&quot;cmti-10x-x-109&quot;&gt;but&lt;/span&gt;
+          you&amp;#x2019;ll need a patched &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;pgfsys-tex4ht.def&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; in your project.
+          &lt;/li&gt;
+          &lt;li class=&quot;itemize&quot;&gt;I&amp;#x2019;ve included some CSS styling. You can add a separate &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;.css&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; file
+          for further styling.&lt;/li&gt;&lt;/ul&gt;
+     &lt;/li&gt;
+     &lt;li 
+  class=&quot;enumerate&quot; id=&quot;x1-1006x3&quot;&gt;When compilation is complete, use the steps at &lt;a 
+href=&quot;https://www.overleaf.com/learn/how-to/View_generated_files&quot; &gt;&lt;span 
+class=&quot;cmti-10x-x-109&quot;&gt;View generated files&lt;/span&gt;&lt;/a&gt; to
+     download each generated file required.&lt;/li&gt;&lt;/ol&gt;
+&lt;p&gt;
+   &lt;/p&gt; 
+
+   &lt;h4 class=&quot;subsectionHead&quot;&gt;&lt;span class=&quot;titlemark&quot;&gt;1.1   &lt;/span&gt; &lt;a 
+ id=&quot;x1-20001.1&quot;&gt;&lt;/a&gt;Caveats&lt;/h4&gt;
+     &lt;ul class=&quot;itemize1&quot;&gt;
+     &lt;li class=&quot;itemize&quot;&gt;This is an experimental hackety hack – things may just not work! More
+     a proof-of-concept rather than a stable solution on Overleaf at present.
+     &lt;/li&gt;
+     &lt;li class=&quot;itemize&quot;&gt;tex4ht doesn&amp;#x2019;t work with &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;fontspec&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; nor &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;authblk&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;.
+     &lt;/li&gt;
+     &lt;li class=&quot;itemize&quot;&gt;Avoid &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;\mathbf&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; – this broke MathML and MathJax for me.
+     &lt;/li&gt;
+     &lt;li class=&quot;itemize&quot;&gt;Avoid, or re-define the &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;multicol&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; environment to do nothing – tex4ht
+     will really export text in two or three columns &lt;span 
+class=&quot;cmti-10x-x-109&quot;&gt;by PDF page&lt;/span&gt;, and it&amp;#x2019;s
+     not the most readable.&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;
+   &lt;/p&gt; 
+
+   &lt;h3 class=&quot;sectionHead&quot;&gt;&lt;span class=&quot;titlemark&quot;&gt;2   &lt;/span&gt; &lt;a 
+ id=&quot;x1-30002&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;Your introduction goes here!
+                                                                     
+
+                                                                     
+&lt;/p&gt; 
+&lt;p&gt;
+   &lt;/p&gt; 
+
+   &lt;h3 class=&quot;sectionHead&quot;&gt;&lt;span class=&quot;titlemark&quot;&gt;3   &lt;/span&gt; &lt;a 
+ id=&quot;x1-40003&quot;&gt;&lt;/a&gt;Some &lt;span class=&quot;LATEX&quot;&gt;L&lt;span class=&quot;A&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;TEX&quot;&gt;T&lt;span 
+class=&quot;E&quot;&gt;E&lt;/span&gt;X&lt;/span&gt;&lt;/span&gt; Examples&lt;/h3&gt;
+&lt;p&gt;
+   &lt;/p&gt; 
+
+   &lt;h4 class=&quot;subsectionHead&quot;&gt;&lt;span class=&quot;titlemark&quot;&gt;3.1   &lt;/span&gt; &lt;a 
+ id=&quot;x1-50003.1&quot;&gt;&lt;/a&gt;How to Include Figures&lt;/h4&gt;
+&lt;p&gt;First you have to upload the image file (JPEG, PNG or PDF) from your
+computer to writeLaTeX using the upload link the project menu. Then use
+the includegraphics command to include it in your document. Use the
+figure environment and the caption command to add a number and a
+caption to your figure. See the code for Figure &lt;a 
+href=&quot;#x1-50011&quot;&gt;1&lt;!--tex4ht:ref: fig:frog --&gt;&lt;/a&gt; in this section for an
+example.
+   &lt;/p&gt; 
+&lt;hr class=&quot;figure&quot; /&gt;&lt;div class=&quot;figure&quot; 
+&gt;
+                                                                     
+
+                                                                     
+                                                                     
+
+                                                                     
+
+&lt;p&gt;&lt;img 
+src=&quot;frog.jpg&quot; alt=&quot;PIC&quot;  
+ /&gt;
+&lt;br /&gt; &lt;/p&gt; 
+&lt;div class=&quot;caption&quot; 
+&gt;&lt;span class=&quot;id&quot;&gt;Figure 1: &lt;/span&gt;&lt;span  
+class=&quot;content&quot;&gt;&lt;a 
+ id=&quot;x1-50011&quot;&gt;&lt;/a&gt;This frog was uploaded to Overleaf via the project menu. The
+&lt;code&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;.jpg&lt;/span&gt;&lt;/code&gt; file will be used as-is in the HTML export.&lt;/span&gt;&lt;/div&gt;&lt;!--tex4ht:label?: x1-50011 --&gt;
+                                                                     
+
+                                                                     
+   &lt;/div&gt;&lt;hr class=&quot;endfigure&quot; /&gt;
+   &lt;hr class=&quot;figure&quot; /&gt;&lt;div class=&quot;figure&quot; 
+&gt;
+                                                                     
+
+                                                                     
+                                                                     
+
+                                                                     
+
+&lt;p&gt;&lt;img 
+src=&quot;overleaf.png&quot; alt=&quot;PIC&quot;  
+ /&gt;
+&lt;br /&gt; &lt;/p&gt; 
+&lt;div class=&quot;caption&quot; 
+&gt;&lt;span class=&quot;id&quot;&gt;Figure 2: &lt;/span&gt;&lt;span  
+class=&quot;content&quot;&gt;PDF images will be converted to PNG when exported to HTML.&lt;/span&gt;&lt;/div&gt;&lt;!--tex4ht:label?: x1-50022 --&gt;
+                                                                     
+
+                                                                     
+   &lt;/div&gt;&lt;hr class=&quot;endfigure&quot; /&gt;
+   &lt;h4 class=&quot;subsectionHead&quot;&gt;&lt;span class=&quot;titlemark&quot;&gt;3.2   &lt;/span&gt; &lt;a 
+ id=&quot;x1-60003.2&quot;&gt;&lt;/a&gt;How to Make Tables&lt;/h4&gt;
+&lt;p&gt;Use the table and tabular commands for basic tables — see Table &lt;a 
+href=&quot;#x1-60011&quot;&gt;1&lt;!--tex4ht:ref: tab:widgets --&gt;&lt;/a&gt;, for
+example.
+   &lt;/p&gt; 
+&lt;div class=&quot;table&quot;&gt;
+                                                                     
+
+                                                                     
+&lt;p&gt;   &lt;/p&gt; 
+&lt;hr class=&quot;float&quot; /&gt;&lt;div class=&quot;float&quot; 
+&gt;
+                                                                     
+
+                                                                     
+&lt;div class=&quot;tabular&quot;&gt; &lt;table id=&quot;TBL-2&quot; class=&quot;tabular&quot; 
+cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; rules=&quot;groups&quot; 
+&gt;&lt;colgroup id=&quot;TBL-2-1g&quot;&gt;&lt;col 
+id=&quot;TBL-2-1&quot; /&gt;&lt;/colgroup&gt;&lt;colgroup id=&quot;TBL-2-2g&quot;&gt;&lt;col 
+id=&quot;TBL-2-2&quot; /&gt;&lt;/colgroup&gt;&lt;tr  
+ style=&quot;vertical-align:baseline;&quot; id=&quot;TBL-2-1-&quot;&gt;&lt;td  style=&quot;text-align:left; white-space:nowrap;&quot; id=&quot;TBL-2-1-1&quot;  
+class=&quot;td11&quot;&gt;Item    &lt;/td&gt;&lt;td  style=&quot;text-align:right; white-space:nowrap;&quot; id=&quot;TBL-2-1-2&quot;  
+class=&quot;td11&quot;&gt;Quantity&lt;/td&gt;
+&lt;/tr&gt;&lt;tr 
+class=&quot;hline&quot;&gt;&lt;td&gt;&lt;hr /&gt;&lt;/td&gt;&lt;td&gt;&lt;hr /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr  
+ style=&quot;vertical-align:baseline;&quot; id=&quot;TBL-2-2-&quot;&gt;&lt;td  style=&quot;text-align:left; white-space:nowrap;&quot; id=&quot;TBL-2-2-1&quot;  
+class=&quot;td11&quot;&gt;Widgets&lt;/td&gt;&lt;td  style=&quot;text-align:right; white-space:nowrap;&quot; id=&quot;TBL-2-2-2&quot;  
+class=&quot;td11&quot;&gt;      42&lt;/td&gt;
+&lt;/tr&gt;&lt;tr  
+ style=&quot;vertical-align:baseline;&quot; id=&quot;TBL-2-3-&quot;&gt;&lt;td  style=&quot;text-align:left; white-space:nowrap;&quot; id=&quot;TBL-2-3-1&quot;  
+class=&quot;td11&quot;&gt;Gadgets&lt;/td&gt;&lt;td  style=&quot;text-align:right; white-space:nowrap;&quot; id=&quot;TBL-2-3-2&quot;  
+class=&quot;td11&quot;&gt;      13&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;br /&gt; &lt;div class=&quot;caption&quot; 
+&gt;&lt;span class=&quot;id&quot;&gt;Table 1: &lt;/span&gt;&lt;span  
+class=&quot;content&quot;&gt;&lt;a 
+ id=&quot;x1-60011&quot;&gt;&lt;/a&gt;An example table.&lt;/span&gt;&lt;/div&gt;&lt;!--tex4ht:label?: x1-60011 --&gt;
+                                                                     
+
+                                                                     
+   &lt;/div&gt;&lt;hr class=&quot;endfloat&quot; /&gt;
+   &lt;/div&gt;
+   &lt;h4 class=&quot;subsectionHead&quot;&gt;&lt;span class=&quot;titlemark&quot;&gt;3.3   &lt;/span&gt; &lt;a 
+ id=&quot;x1-70003.3&quot;&gt;&lt;/a&gt;How to Write Mathematics&lt;/h4&gt;
+&lt;p&gt;&lt;span class=&quot;LATEX&quot;&gt;L&lt;span class=&quot;A&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;TEX&quot;&gt;T&lt;span 
+class=&quot;E&quot;&gt;E&lt;/span&gt;X&lt;/span&gt;&lt;/span&gt; is great at typesetting mathematics. Let
+&lt;!--l. 94--&gt;&lt;math 
+ xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;  
+display=&quot;inline&quot; &gt;&lt;msub&gt;&lt;mrow 
+&gt;&lt;mi 
+&gt;X&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow 
+&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msub 
+&gt;&lt;mo 
+class=&quot;MathClass-punc&quot;&gt;,&lt;/mo&gt;&lt;msub&gt;&lt;mrow 
+&gt;&lt;mi 
+&gt;X&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow 
+&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;/msub 
+&gt;&lt;mo 
+class=&quot;MathClass-punc&quot;&gt;,&lt;/mo&gt;&lt;mo 
+class=&quot;MathClass-op&quot;&gt;…&lt;/mo&gt;&lt;mo 
+class=&quot;MathClass-punc&quot;&gt;,&lt;/mo&gt;&lt;msub&gt;&lt;mrow 
+&gt;&lt;mi 
+&gt;X&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow 
+&gt;&lt;mi 
+&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub 
+&gt;&lt;/math&gt; be a
+sequence of independent and identically distributed random variables with
+&lt;!--l. 94--&gt;&lt;math 
+ xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;  
+display=&quot;inline&quot; &gt;&lt;mstyle 
+class=&quot;text&quot;&gt;&lt;mtext  &gt;E&lt;/mtext&gt;&lt;/mstyle&gt;&lt;mrow &gt;&lt;mo 
+class=&quot;MathClass-open&quot;&gt;[&lt;/mo&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mrow 
+&gt;&lt;mi 
+&gt;X&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow 
+&gt;&lt;mi 
+&gt;i&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub 
+&gt;&lt;/mrow&gt;&lt;mo 
+class=&quot;MathClass-close&quot;&gt;]&lt;/mo&gt;&lt;/mrow&gt; &lt;mo 
+class=&quot;MathClass-rel&quot;&gt;=&lt;/mo&gt; &lt;mi 
+&gt;μ&lt;/mi&gt;&lt;/math&gt; and
+&lt;!--l. 94--&gt;&lt;math 
+ xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;  
+display=&quot;inline&quot; &gt;&lt;mstyle 
+class=&quot;text&quot;&gt;&lt;mtext  &gt;Var&lt;/mtext&gt;&lt;/mstyle&gt;&lt;mrow &gt;&lt;mo 
+class=&quot;MathClass-open&quot;&gt;[&lt;/mo&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mrow 
+&gt;&lt;mi 
+&gt;X&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow 
+&gt;&lt;mi 
+&gt;i&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub 
+&gt;&lt;/mrow&gt;&lt;mo 
+class=&quot;MathClass-close&quot;&gt;]&lt;/mo&gt;&lt;/mrow&gt; &lt;mo 
+class=&quot;MathClass-rel&quot;&gt;=&lt;/mo&gt; &lt;msup&gt;&lt;mrow 
+&gt;&lt;mi 
+&gt;σ&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow 
+&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup 
+&gt; &lt;mo 
+class=&quot;MathClass-rel&quot;&gt;&amp;#x003C;&lt;/mo&gt; &lt;mi 
+&gt;∞&lt;/mi&gt;&lt;/math&gt;, and
+let
+&lt;!--tex4ht:inline--&gt;&lt;/p&gt; 
+&lt;!--l. 95--&gt;&lt;math 
+ xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;  
+display=&quot;block&quot; &gt;
+                &lt;msub&gt;&lt;mrow 
+&gt;&lt;mi 
+&gt;S&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow 
+&gt;&lt;mi 
+&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub 
+&gt; &lt;mo 
+class=&quot;MathClass-rel&quot;&gt;=&lt;/mo&gt; &lt;mfrac&gt;&lt;mrow 
+&gt;&lt;msub&gt;&lt;mrow 
+&gt;&lt;mi 
+&gt;X&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow 
+&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msub 
+&gt; &lt;mo 
+class=&quot;MathClass-bin&quot;&gt;+&lt;/mo&gt; &lt;msub&gt;&lt;mrow 
+&gt;&lt;mi 
+&gt;X&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow 
+&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;/msub 
+&gt; &lt;mo 
+class=&quot;MathClass-bin&quot;&gt;+&lt;/mo&gt; &lt;mo 
+class=&quot;MathClass-rel&quot;&gt;⋯&lt;/mo&gt; &lt;mo 
+class=&quot;MathClass-bin&quot;&gt;+&lt;/mo&gt; &lt;msub&gt;&lt;mrow 
+&gt;&lt;mi 
+&gt;X&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow 
+&gt;&lt;mi 
+&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub 
+&gt;&lt;/mrow&gt; 
+             &lt;mrow 
+&gt;&lt;mi 
+&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;           &lt;mo 
+class=&quot;MathClass-rel&quot;&gt;=&lt;/mo&gt; &lt;mfrac&gt;&lt;mrow 
+&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt; 
+&lt;mrow 
+&gt;&lt;mi 
+&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;munderover accentunder=&quot;false&quot; accent=&quot;false&quot;&gt;&lt;mrow  
+&gt;&lt;mo mathsize=&quot;big&quot; 
+&gt;∑&lt;/mo&gt;
+  &lt;/mrow&gt;&lt;mrow 
+&gt;&lt;mi 
+&gt;i&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow 
+&gt;&lt;mi 
+&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;/munderover 
+&gt;&lt;msub&gt;&lt;mrow 
+&gt;&lt;mi 
+&gt;X&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow 
+&gt;
+&lt;mi 
+&gt;i&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub 
+&gt;
+&lt;/math&gt;
+&lt;p&gt; denote their mean. Then as &lt;!--l. 97--&gt;&lt;math 
+ xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;  
+display=&quot;inline&quot; &gt;&lt;mi 
+&gt;n&lt;/mi&gt;&lt;/math&gt;
+approaches infinity, the random variables
+&lt;!--l. 97--&gt;&lt;math 
+ xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;  
+display=&quot;inline&quot; &gt;&lt;msqrt&gt;&lt;mrow&gt;&lt;mi 
+&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;/msqrt&gt;&lt;mrow &gt;&lt;mo 
+class=&quot;MathClass-open&quot;&gt;(&lt;/mo&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mrow 
+&gt;&lt;mi 
+&gt;S&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow 
+&gt;
+&lt;mi 
+&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub 
+&gt; &lt;mo 
+class=&quot;MathClass-bin&quot;&gt;−&lt;/mo&gt; &lt;mi 
+&gt;μ&lt;/mi&gt;&lt;/mrow&gt;&lt;mo 
+class=&quot;MathClass-close&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/math&gt; converge in distribution
+to a normal &lt;!--l. 97--&gt;&lt;math 
+ xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;  
+display=&quot;inline&quot; &gt;&lt;mi 
+mathvariant=&quot;bold-script&quot;&gt;N&lt;/mi&gt;&lt;mrow &gt;&lt;mo 
+class=&quot;MathClass-open&quot;&gt;(&lt;/mo&gt;&lt;mrow&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo 
+class=&quot;MathClass-punc&quot;&gt;,&lt;/mo&gt;&lt;msup&gt;&lt;mrow 
+&gt;&lt;mi 
+&gt;σ&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow 
+&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup 
+&gt;&lt;/mrow&gt;&lt;mo 
+class=&quot;MathClass-close&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/math&gt;.
+&lt;/p&gt; 
+&lt;p&gt;   In this HTML export example, math is output as MathML, and will be
+rendered using MathJax.
+&lt;/p&gt; 
+&lt;p&gt;
+   &lt;/p&gt; 
+
+   &lt;h4 class=&quot;subsectionHead&quot;&gt;&lt;span class=&quot;titlemark&quot;&gt;3.4   &lt;/span&gt; &lt;a 
+ id=&quot;x1-80003.4&quot;&gt;&lt;/a&gt;How to Make Sections and Subsections&lt;/h4&gt;
+&lt;p&gt;Use section and subsection commands to organize your document. &lt;span class=&quot;LATEX&quot;&gt;L&lt;span class=&quot;A&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;TEX&quot;&gt;T&lt;span 
+class=&quot;E&quot;&gt;E&lt;/span&gt;X&lt;/span&gt;&lt;/span&gt;
+handles all the formatting and numbering automatically. Use ref and label
+commands for cross-references.
+&lt;/p&gt; 
+&lt;p&gt;
+   &lt;/p&gt; 
+
+   &lt;h4 class=&quot;subsectionHead&quot;&gt;&lt;span class=&quot;titlemark&quot;&gt;3.5   &lt;/span&gt; &lt;a 
+ id=&quot;x1-90003.5&quot;&gt;&lt;/a&gt;How to Make Lists&lt;/h4&gt;
+&lt;p&gt;You can make lists with automatic numbering …
+                                                                     
+
+                                                                     
+&lt;/p&gt; 
+&lt;p&gt;
+     &lt;/p&gt; 
+&lt;ol  class=&quot;enumerate1&quot; &gt;
+     &lt;li 
+  class=&quot;enumerate&quot; id=&quot;x1-9002x1&quot;&gt;Like this,
+     &lt;/li&gt;
+     &lt;li 
+  class=&quot;enumerate&quot; id=&quot;x1-9004x2&quot;&gt;and like this.&lt;/li&gt;&lt;/ol&gt;
+&lt;p&gt;…or bullet points …&lt;/p&gt; 
+
+     &lt;ul class=&quot;itemize1&quot;&gt;
+     &lt;li class=&quot;itemize&quot;&gt;Like this,
+     &lt;/li&gt;
+     &lt;li class=&quot;itemize&quot;&gt;and like this.&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;…or with words and descriptions …
+     &lt;/p&gt; 
+&lt;dl class=&quot;description&quot;&gt;&lt;dt class=&quot;description&quot;&gt;
+&lt;span 
+class=&quot;cmbx-10x-x-109&quot;&gt;Word&lt;/span&gt; &lt;/dt&gt;&lt;dd 
+class=&quot;description&quot;&gt;Definition
+     &lt;/dd&gt;&lt;dt class=&quot;description&quot;&gt;
+&lt;span 
+class=&quot;cmbx-10x-x-109&quot;&gt;Concept&lt;/span&gt; &lt;/dt&gt;&lt;dd 
+class=&quot;description&quot;&gt;Explanation
+     &lt;/dd&gt;&lt;dt class=&quot;description&quot;&gt;
+&lt;span 
+class=&quot;cmbx-10x-x-109&quot;&gt;Idea&lt;/span&gt; &lt;/dt&gt;&lt;dd 
+class=&quot;description&quot;&gt;Text&lt;/dd&gt;&lt;/dl&gt;
+&lt;p&gt;
+   &lt;/p&gt; 
+
+   &lt;h3 class=&quot;sectionHead&quot;&gt;&lt;span class=&quot;titlemark&quot;&gt;4   &lt;/span&gt; &lt;a 
+ id=&quot;x1-100004&quot;&gt;&lt;/a&gt;Tikz Drawings&lt;/h3&gt;
+&lt;p&gt;TikZ drawings will be output as SVG, which should be rendered by most modern
+browsers. However you need to use a patched copy of &lt;span class=&quot;obeylines-h&quot;&gt;&lt;span class=&quot;verb&quot;&gt;&lt;span 
+class=&quot;cmtt-10x-x-109&quot;&gt;pgfsys-tex4ht.def&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; for
+things to work.
+   &lt;/p&gt; 
+&lt;hr class=&quot;figure&quot; /&gt;&lt;div class=&quot;figure&quot; 
+&gt;
+                                                                     
+
+                                                                     
+                                                                     
+
+                                                                     
+&lt;p&gt;&lt;object data=&quot;main-1.svg&quot; width=&quot;314.5752 &quot; height=&quot;37.6092 &quot; type=&quot;image/svg+xml&quot;&gt;&lt;p&gt;SVG-Viewer needed.&lt;/p&gt;&lt;/object&gt;
+&lt;br /&gt; &lt;/p&gt; 
+&lt;div class=&quot;caption&quot; 
+&gt;&lt;span class=&quot;id&quot;&gt;Figure 3: &lt;/span&gt;&lt;span  
+class=&quot;content&quot;&gt;TikZ drawings will be output as SVG, which should be rendered
+by most modern browsers.&lt;/span&gt;&lt;/div&gt;&lt;!--tex4ht:label?: x1-100013 --&gt;
+                                                                     
+
+                                                                     
+   &lt;/div&gt;&lt;hr class=&quot;endfigure&quot; /&gt;
+    
+&lt;/body&gt; 
+&lt;/html&gt;
+                                                                     
+
+                                                                     
+                                                                     
+
+
+</description>
+        <pubDate>Sat, 02 Feb 2019 00:00:00 -0500</pubDate>
+        <link>http://meenurajapandian.github.io/2019/02/02/overleaftry.html</link>
+        <guid isPermaLink="true">http://meenurajapandian.github.io/2019/02/02/overleaftry.html</guid>
+        
         
       </item>
     

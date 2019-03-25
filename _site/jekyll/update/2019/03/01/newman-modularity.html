@@ -47,7 +47,21 @@ noun</p>
 
 <p>One of the first paper on community detection methods that I read was the Modularity and Community Structure in Network. The central idea of the paper was that if there are more than expected edges within a module (community) or equivalently, if there are less than expected edges between modules, we can conclude the current segregation is the most optimal method of dividing the network into communities. This is done by maximizing the modularity of the network given by Q = 1/4m <em>insert formula</em>.  where …..</p>
 
-<p>Let’s take a deeper look at what the formula represents. The value that is summed is also taken into account when the two nodes i and j belong to the same community. The term rewards when two nodes of relatively low degrees that belong to the same module are directly connected and there is a very small contribution when two nodes of very high degrees are directly connected within the module since it is not a very surprising possibility and still lower value when two nodes have high degrees but are not directly connected(? but shouldn’t this be a higher value since this is surprising possibility but since it is not directly connected it isn’t considered????)  Let’s see how this value changes for different degree pairs that belong in the same module for a network with say a 100 edges.</p>
+<p>Let’s take a closer look at what the formula represents. The term within the summation is only taken into account when the two nodes i and j belong to the same community. The term is rewarding (towards modularity) when two nodes of relatively low degrees that belong to the same module are directly connected and the least contribution to modularity when two nodes of very high degrees are directly connected within the module since it is not a very surprising possibility. There doesn’t seem to a big difference between nodes that are directly connected and those that aren’t. Let’s consider a network of total edges 100 and see how the different node pairs contribute to the modularity value.</p>
+
+<p><em>insert image</em></p>
+
+<p>As we can see there is little difference in the modularity contribution between nodes that are directly connected and those that aren’t. If there are two nodes with a very high degree compared to the other nodes, then they are likely in different communities and they will take along with them the nodes they are directly connected to. We can see it as two rich hubs that have communities of their own. (?)</p>
+
+<p>Skipping the theory behind how this algorithm came to be from the formula above, the method of dividing the network into 2 communities is as follows:</p>
+
+<ol>
+  <li>Find the Modularity matrix B = A - kkT/2m</li>
+  <li>Compute the eigen value and eigen vector of the modularity matrix B.</li>
+  <li>The eigen vector corresponding to the highest eigen value represents the communities of the network. All positive values of the vector correspond to one community and the negative values correspond to a different community. If all the positions of this eigen vector have the same sign then they cannot be divided into any communities.</li>
+</ol>
+
+<p>To divide the network into more than two communities or see if it is possible, the same method as above is applied to the different community subgraphs. However there is a small change.</p>
 
             </div>
         </div>

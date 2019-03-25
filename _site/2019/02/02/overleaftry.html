@@ -1,0 +1,469 @@
+<!DOCTYPE html> 
+<html> 
+<head> <title></title> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<link rel="stylesheet" type="text/css" href="main.css" /> 
+<!-- for beautifying --><link rel="stylesheet" type="text/css" href="site.css" /> 
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ extensions: ["tex2jax.js"], jax: ["input/TeX", "output/HTML-CSS"], tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], displayMath: [ ['$$','$$'], ["\\[","\\]"] ], processEscapes: true }, "HTML-CSS": { availableFonts: ["TeX"] } }); </script> <script type="text/javascript" 
+src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" 
+></script> 
+</head><body 
+>
+   <div class="maketitle">
+                                                                     
+
+                                                                     
+                                                                     
+
+                                                                     
+
+<h2 class="titleHead">Testing HTML Export with tex4ht</h2>
+<div class="author" ><span 
+class="cmr-12">LianTze Lim</span></div><br />
+<div class="date" ></div>
+   </div>
+   <div 
+class="abstract" 
+>
+<div class="center" 
+>
+<p>
+</p> 
+<p><span 
+class="cmbx-10">Abstract</span></p> 
+</div>
+     <p>   <span 
+class="cmr-10">Your abstract. </span><span 
+class="cmr-10">Ç</span><span 
+class="cmr-10">a va? (Yes accented characters work.)</span>
+</p> 
+</div>
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>Overview of Steps</h3>
+<p>
+     </p> 
+<ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-1002x1">I  tweaked  the  <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">latexmkrc</span></span></span> file  so  that  <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">make4ht</span></span></span> is  run  along  with
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">pdflatex</span></span></span>, so the HTML export is done only if you set your project to
+     be compiled with <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">pdflatex</span></span></span>.
+     <p>(<span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">make4ht</span></span></span> doesn&#x2019;t  work  with  <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">fontspec</span></span></span>;  I  haven&#x2019;t  time  to  try  this
+     workflow with <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">XeLaTeX</span></span></span> nor <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">LuaLaTeX</span></span></span> yet. So let&#x2019;s just leave it at
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">pdflatex</span></span></span> first, yeah?)
+     </p> 
+</li>
+     <li 
+  class="enumerate" id="x1-1004x2"><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">my.cfg</span></span></span> contains the settings I usually use in my workflow:
+          <ul class="itemize1">
+          <li class="itemize">Output  math  as  MathML,  and  render  it  in  browsers  using
+          MathJax.
+                                                                     
+
+                                                                     
+          </li>
+          <li class="itemize">When <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">\includegraphics</span></span></span> uses <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">.jpg</span></span></span>, <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">.png</span></span></span>, <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">.jpg</span></span></span>, <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">.svg</span></span></span>, use the
+          files directly for the HTML without conversion.
+          </li>
+          <li class="itemize">When <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">\includegraphics</span></span></span> uses <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">.eps</span></span></span> and <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">.pdf</span></span></span>, convert them to
+          <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">.png</span></span></span> using ImageMagick <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">convert</span></span></span>, and use those for the HTML.
+          </li>
+          <li class="itemize">Tikz drawings are output as <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">.svg</span></span></span> without any extra settings, <span 
+class="cmti-10x-x-109">but</span>
+          you&#x2019;ll need a patched <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">pgfsys-tex4ht.def</span></span></span> in your project.
+          </li>
+          <li class="itemize">I&#x2019;ve included some CSS styling. You can add a separate <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">.css</span></span></span> file
+          for further styling.</li></ul>
+     </li>
+     <li 
+  class="enumerate" id="x1-1006x3">When compilation is complete, use the steps at <a 
+href="https://www.overleaf.com/learn/how-to/View_generated_files" ><span 
+class="cmti-10x-x-109">View generated files</span></a> to
+     download each generated file required.</li></ol>
+<p>
+   </p> 
+
+   <h4 class="subsectionHead"><span class="titlemark">1.1   </span> <a 
+ id="x1-20001.1"></a>Caveats</h4>
+     <ul class="itemize1">
+     <li class="itemize">This is an experimental hackety hack – things may just not work! More
+     a proof-of-concept rather than a stable solution on Overleaf at present.
+     </li>
+     <li class="itemize">tex4ht doesn&#x2019;t work with <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">fontspec</span></span></span> nor <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">authblk</span></span></span>.
+     </li>
+     <li class="itemize">Avoid <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">\mathbf</span></span></span> – this broke MathML and MathJax for me.
+     </li>
+     <li class="itemize">Avoid, or re-define the <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">multicol</span></span></span> environment to do nothing – tex4ht
+     will really export text in two or three columns <span 
+class="cmti-10x-x-109">by PDF page</span>, and it&#x2019;s
+     not the most readable.</li></ul>
+<p>
+   </p> 
+
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-30002"></a>Introduction</h3>
+<p>Your introduction goes here!
+                                                                     
+
+                                                                     
+</p> 
+<p>
+   </p> 
+
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-40003"></a>Some <span class="LATEX">L<span class="A">A</span><span class="TEX">T<span 
+class="E">E</span>X</span></span> Examples</h3>
+<p>
+   </p> 
+
+   <h4 class="subsectionHead"><span class="titlemark">3.1   </span> <a 
+ id="x1-50003.1"></a>How to Include Figures</h4>
+<p>First you have to upload the image file (JPEG, PNG or PDF) from your
+computer to writeLaTeX using the upload link the project menu. Then use
+the includegraphics command to include it in your document. Use the
+figure environment and the caption command to add a number and a
+caption to your figure. See the code for Figure <a 
+href="#x1-50011">1<!--tex4ht:ref: fig:frog --></a> in this section for an
+example.
+   </p> 
+<hr class="figure" /><div class="figure" 
+>
+                                                                     
+
+                                                                     
+                                                                     
+
+                                                                     
+
+<p><img 
+src="frog.jpg" alt="PIC"  
+ />
+<br /> </p> 
+<div class="caption" 
+><span class="id">Figure 1: </span><span  
+class="content"><a 
+ id="x1-50011"></a>This frog was uploaded to Overleaf via the project menu. The
+<code><span 
+class="cmtt-10x-x-109">.jpg</span></code> file will be used as-is in the HTML export.</span></div><!--tex4ht:label?: x1-50011 -->
+                                                                     
+
+                                                                     
+   </div><hr class="endfigure" />
+   <hr class="figure" /><div class="figure" 
+>
+                                                                     
+
+                                                                     
+                                                                     
+
+                                                                     
+
+<p><img 
+src="overleaf.png" alt="PIC"  
+ />
+<br /> </p> 
+<div class="caption" 
+><span class="id">Figure 2: </span><span  
+class="content">PDF images will be converted to PNG when exported to HTML.</span></div><!--tex4ht:label?: x1-50022 -->
+                                                                     
+
+                                                                     
+   </div><hr class="endfigure" />
+   <h4 class="subsectionHead"><span class="titlemark">3.2   </span> <a 
+ id="x1-60003.2"></a>How to Make Tables</h4>
+<p>Use the table and tabular commands for basic tables — see Table <a 
+href="#x1-60011">1<!--tex4ht:ref: tab:widgets --></a>, for
+example.
+   </p> 
+<div class="table">
+                                                                     
+
+                                                                     
+<p>   </p> 
+<hr class="float" /><div class="float" 
+>
+                                                                     
+
+                                                                     
+<div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1" /></colgroup><colgroup id="TBL-2-2g"><col 
+id="TBL-2-2" /></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="text-align:left; white-space:nowrap;" id="TBL-2-1-1"  
+class="td11">Item    </td><td  style="text-align:right; white-space:nowrap;" id="TBL-2-1-2"  
+class="td11">Quantity</td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="text-align:left; white-space:nowrap;" id="TBL-2-2-1"  
+class="td11">Widgets</td><td  style="text-align:right; white-space:nowrap;" id="TBL-2-2-2"  
+class="td11">      42</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="text-align:left; white-space:nowrap;" id="TBL-2-3-1"  
+class="td11">Gadgets</td><td  style="text-align:right; white-space:nowrap;" id="TBL-2-3-2"  
+class="td11">      13</td></tr></table>
+</div>
+<br /> <div class="caption" 
+><span class="id">Table 1: </span><span  
+class="content"><a 
+ id="x1-60011"></a>An example table.</span></div><!--tex4ht:label?: x1-60011 -->
+                                                                     
+
+                                                                     
+   </div><hr class="endfloat" />
+   </div>
+   <h4 class="subsectionHead"><span class="titlemark">3.3   </span> <a 
+ id="x1-70003.3"></a>How to Write Mathematics</h4>
+<p><span class="LATEX">L<span class="A">A</span><span class="TEX">T<span 
+class="E">E</span>X</span></span> is great at typesetting mathematics. Let
+<!--l. 94--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>X</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+><mo 
+class="MathClass-punc">,</mo><msub><mrow 
+><mi 
+>X</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+><mo 
+class="MathClass-punc">,</mo><mo 
+class="MathClass-op">…</mo><mo 
+class="MathClass-punc">,</mo><msub><mrow 
+><mi 
+>X</mi></mrow><mrow 
+><mi 
+>n</mi></mrow></msub 
+></math> be a
+sequence of independent and identically distributed random variables with
+<!--l. 94--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle 
+class="text"><mtext  >E</mtext></mstyle><mrow ><mo 
+class="MathClass-open">[</mo><mrow><msub><mrow 
+><mi 
+>X</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+></mrow><mo 
+class="MathClass-close">]</mo></mrow> <mo 
+class="MathClass-rel">=</mo> <mi 
+>μ</mi></math> and
+<!--l. 94--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle 
+class="text"><mtext  >Var</mtext></mstyle><mrow ><mo 
+class="MathClass-open">[</mo><mrow><msub><mrow 
+><mi 
+>X</mi></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+></mrow><mo 
+class="MathClass-close">]</mo></mrow> <mo 
+class="MathClass-rel">=</mo> <msup><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>2</mn></mrow></msup 
+> <mo 
+class="MathClass-rel">&#x003C;</mo> <mi 
+>∞</mi></math>, and
+let
+<!--tex4ht:inline--></p> 
+<!--l. 95--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" >
+                <msub><mrow 
+><mi 
+>S</mi></mrow><mrow 
+><mi 
+>n</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <mfrac><mrow 
+><msub><mrow 
+><mi 
+>X</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <msub><mrow 
+><mi 
+>X</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <mo 
+class="MathClass-rel">⋯</mo> <mo 
+class="MathClass-bin">+</mo> <msub><mrow 
+><mi 
+>X</mi></mrow><mrow 
+><mi 
+>n</mi></mrow></msub 
+></mrow> 
+             <mrow 
+><mi 
+>n</mi></mrow></mfrac>           <mo 
+class="MathClass-rel">=</mo> <mfrac><mrow 
+><mn>1</mn></mrow> 
+<mrow 
+><mi 
+>n</mi></mrow></mfrac><munderover accentunder="false" accent="false"><mrow  
+><mo mathsize="big" 
+>∑</mo>
+  </mrow><mrow 
+><mi 
+>i</mi></mrow><mrow 
+><mi 
+>n</mi></mrow></munderover 
+><msub><mrow 
+><mi 
+>X</mi></mrow><mrow 
+>
+<mi 
+>i</mi></mrow></msub 
+>
+</math>
+<p> denote their mean. Then as <!--l. 97--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>n</mi></math>
+approaches infinity, the random variables
+<!--l. 97--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msqrt><mrow><mi 
+>n</mi></mrow></msqrt><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>S</mi></mrow><mrow 
+>
+<mi 
+>n</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <mi 
+>μ</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math> converge in distribution
+to a normal <!--l. 97--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+mathvariant="bold-script">N</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mn>0</mn><mo 
+class="MathClass-punc">,</mo><msup><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>2</mn></mrow></msup 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>.
+</p> 
+<p>   In this HTML export example, math is output as MathML, and will be
+rendered using MathJax.
+</p> 
+<p>
+   </p> 
+
+   <h4 class="subsectionHead"><span class="titlemark">3.4   </span> <a 
+ id="x1-80003.4"></a>How to Make Sections and Subsections</h4>
+<p>Use section and subsection commands to organize your document. <span class="LATEX">L<span class="A">A</span><span class="TEX">T<span 
+class="E">E</span>X</span></span>
+handles all the formatting and numbering automatically. Use ref and label
+commands for cross-references.
+</p> 
+<p>
+   </p> 
+
+   <h4 class="subsectionHead"><span class="titlemark">3.5   </span> <a 
+ id="x1-90003.5"></a>How to Make Lists</h4>
+<p>You can make lists with automatic numbering …
+                                                                     
+
+                                                                     
+</p> 
+<p>
+     </p> 
+<ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-9002x1">Like this,
+     </li>
+     <li 
+  class="enumerate" id="x1-9004x2">and like this.</li></ol>
+<p>…or bullet points …</p> 
+
+     <ul class="itemize1">
+     <li class="itemize">Like this,
+     </li>
+     <li class="itemize">and like this.</li></ul>
+<p>…or with words and descriptions …
+     </p> 
+<dl class="description"><dt class="description">
+<span 
+class="cmbx-10x-x-109">Word</span> </dt><dd 
+class="description">Definition
+     </dd><dt class="description">
+<span 
+class="cmbx-10x-x-109">Concept</span> </dt><dd 
+class="description">Explanation
+     </dd><dt class="description">
+<span 
+class="cmbx-10x-x-109">Idea</span> </dt><dd 
+class="description">Text</dd></dl>
+<p>
+   </p> 
+
+   <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+ id="x1-100004"></a>Tikz Drawings</h3>
+<p>TikZ drawings will be output as SVG, which should be rendered by most modern
+browsers. However you need to use a patched copy of <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">pgfsys-tex4ht.def</span></span></span> for
+things to work.
+   </p> 
+<hr class="figure" /><div class="figure" 
+>
+                                                                     
+
+                                                                     
+                                                                     
+
+                                                                     
+<p><object data="main-1.svg" width="314.5752 " height="37.6092 " type="image/svg+xml"><p>SVG-Viewer needed.</p></object>
+<br /> </p> 
+<div class="caption" 
+><span class="id">Figure 3: </span><span  
+class="content">TikZ drawings will be output as SVG, which should be rendered
+by most modern browsers.</span></div><!--tex4ht:label?: x1-100013 -->
+                                                                     
+
+                                                                     
+   </div><hr class="endfigure" />
+    
+</body> 
+</html>
+                                                                     
+
+                                                                     
+                                                                     
+
+
