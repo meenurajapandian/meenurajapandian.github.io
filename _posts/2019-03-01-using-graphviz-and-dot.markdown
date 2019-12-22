@@ -1,6 +1,6 @@
 ---
 layout: blog
-title:  "Communities and Modularity"
+title:  "Graphviz"
 date:   2019-03-1 19:20:41 -0500
 categories: jekyll update
 ---
@@ -49,4 +49,3 @@ https://graphviz.gitlab.io/_pages/pdf/neatoguide.pdf
 https://renenyffenegger.ch/notes/tools/Graphviz/examples/index
 https://www.tonyballantyne.com/graphs.html
 https://graphviz.readthedocs.io/en/stable/api.html
-
