@@ -1,6 +1,11 @@
 /* Reset CSS */
 
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,
+acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,
+sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,
+caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,
+footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video
+{ margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display: block;}
 body { line-height: 1;}
 ol,ul { list-style: none;}
@@ -13,7 +18,7 @@ nav {
   float: right;
 }
 
-nav a{
+nav > a{
   display: block;
   float: right;
   font-size: 0.6em;
@@ -74,7 +79,8 @@ nav a:hover {
 
 .content-inside{
   padding-bottom: 10em; /*Trial and Error*/
-  padding-left: 5em;
+  padding-left: 15em;
+  padding-right: 15em;
 }
 
 .blog-inside{
@@ -108,6 +114,32 @@ nav a:hover {
   text-align: center;
 }
 
+.post-preview > a {
+  text-decoration: none;
+}
+.post-title {
+  color: #3D3D3D;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-family: Arial;
+  font-size: 1.5em;
+}
+.post-description {
+  color: #727272;
+  font-weight: 300;
+  margin: 0 0 0.5em;
+  font-family: Arial;
+  font-size: 1em;
+}
+
+hr.poststyle {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
 /* Contact Icons vertical*/
 ul.icons li{
   display: inline;
@@ -124,24 +156,4 @@ i.fab:hover{
 }
 i.fas:hover{
   color: #000000;
-}
-
-.post-preview {
-  > a {
-    color: #7B7A7A;
-    &:focus,
-    &:hover {
-      text-decoration: none;
-      color: #7B7A7A;
-    }
-    > .post-title {
-      font-size: 30px;
-      margin-top: 30px;
-      margin-bottom: 10px;
-    }
-    > .post-description {
-      font-weight: 300;
-      margin: 0 0 10px;
-    }
-  }
 }

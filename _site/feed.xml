@@ -6,8 +6,8 @@
 </description>
     <link>http://meenurajapandian.github.io/</link>
     <atom:link href="http://meenurajapandian.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 22 Dec 2019 00:55:00 -0500</pubDate>
-    <lastBuildDate>Sun, 22 Dec 2019 00:55:00 -0500</lastBuildDate>
+    <pubDate>Sun, 22 Dec 2019 01:46:19 -0500</pubDate>
+    <lastBuildDate>Sun, 22 Dec 2019 01:46:19 -0500</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -142,7 +142,7 @@ noun&lt;/p&gt;
 
 &lt;p&gt;All of the above examples only described communities in a social setting - a social network. But isn’t it also possible to find communities in the animal kingdom, telephone network, the world wide web, your anatomy, etc? We struggle a bit, but we can soon see how the idea of a community can be extended to different networks, but what does it mean for a set of entities to be a part of a community, mathematically? There have been a number of studies on how to define a community, find how many communities are present in a network and also how to segregate them. But there is still no consensus on a single or a set of frameworks that would work for different networks.&lt;/p&gt;
 
-&lt;p&gt;One of the first papers on community detection methods that I read was the ``Modularity and Community Structure in Network”. The central idea of the paper was that if there are more than expected edges within a module (community) or equivalently, if there are less than expected edges between modules, we can conclude the current segregation is the most optimal method of dividing the network into communities. This is done by maximizing the modularity of the network given by 
+&lt;p&gt;One of the first papers on community detection methods that I read was the ``Modularity and Community Structure in Network”. The central idea of the paper was that if there are more than expected edges within a module (community) or equivalently, if there are less than expected edges between modules, we can conclude the current segregation is the most optimal method of dividing the network into communities. This is done by maximizing the modularity of the network given by
 [
 Q = \frac{1}{2m} \sum_{ij} (A_{ij} - \frac{k_ik_j}{2m}) \delta_{ij}
 ]
@@ -160,7 +160,7 @@ where $A_{ij}$ is the edge weight between nodes $i$ and $j$, $k_i$ is the degree
 
 &lt;p&gt;To divide the network into more than two communities, the same method as above is applied to the different community subgraphs with a small change. Instead of maximizing the modularity, we try to maximize the contribution to modularity by dividing the subgraph. Alternatively, we subtract the contribution from the modularity matrix towards the previous division and follow the eigenvalue decomposition method for the remaining values.&lt;/p&gt;
 
-&lt;p&gt;Hence the modularity matrix for the subgraph to be divided is 
+&lt;p&gt;Hence the modularity matrix for the subgraph to be divided is
 [
 B_{ij}^{(g)} = B_{ij} - \delta_{ij} \sum_{k\in g} B_{ik}
 ]

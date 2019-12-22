@@ -3,6 +3,7 @@ layout: blog
 title:  "Continuous Time Markov Chain"
 date:   2019-04-15 19:20:41 -0500
 categories: jekyll update
+description: A quick introduction to Git and Github
 ---
 
 Until now, we would check the state of our process at every predetermined amount of time (epoch). But what if the process could let us know when the transition takes place? In our manufacturing process example, instead of checking the state of the product every one hour, we instead make a note of the transition of the product to a different state whenever it happens - 0.5 hrs, 2.75 hr, 3.5 hrs - it doesn't matter. Such a model of stochastic process is called a Continuous Time Markov Chain*
@@ -11,7 +12,7 @@ The Markov Assumption and stationarity assumption holds true even here. The Mark
 
 If we used the Transition Probability Matrix for Discrete time Markov Chains, we will use something called the transition rate matrix for continuous time markov chain. Think of it as the rate at which the state goes from i to j.
 
-The transitions can occur at literally any instant. Then we would have to keep track of an infinite number of discrete time possibilities 
+The transitions can occur at literally any instant. Then we would have to keep track of an infinite number of discrete time possibilities
 
 Since we have continuous time and we cannot count it as discrete steps, we use the rate at which the state changes rather than the probability. In our cupcake example, we might be selling, on an average, 1 cupcake every 30 minutes. Hence the transition rate of going from n cupcakes to n-1 is 1/30 if I consider the unit as minutes or 2 if I consider the unit as hours.
 

@@ -3,6 +3,7 @@ layout: blog
 title:  "Communities and Modularity"
 date:   2019-03-1 19:20:41 -0500
 categories: jekyll update
+description: A quick introduction to Git and Github
 ---
 
 community
@@ -20,7 +21,7 @@ We all know what a community means and what it means to be a part of it. If a pe
 
 All of the above examples only described communities in a social setting - a social network. But isn't it also possible to find communities in the animal kingdom, telephone network, the world wide web, your anatomy, etc? We struggle a bit, but we can soon see how the idea of a community can be extended to different networks, but what does it mean for a set of entities to be a part of a community, mathematically? There have been a number of studies on how to define a community, find how many communities are present in a network and also how to segregate them. But there is still no consensus on a single or a set of frameworks that would work for different networks.
 
-One of the first papers on community detection methods that I read was the ``Modularity and Community Structure in Network". The central idea of the paper was that if there are more than expected edges within a module (community) or equivalently, if there are less than expected edges between modules, we can conclude the current segregation is the most optimal method of dividing the network into communities. This is done by maximizing the modularity of the network given by 
+One of the first papers on community detection methods that I read was the ``Modularity and Community Structure in Network". The central idea of the paper was that if there are more than expected edges within a module (community) or equivalently, if there are less than expected edges between modules, we can conclude the current segregation is the most optimal method of dividing the network into communities. This is done by maximizing the modularity of the network given by
 \[
 Q = \frac{1}{2m} \sum_{ij} (A_{ij} - \frac{k_ik_j}{2m}) \delta_{ij}
 \]
@@ -38,7 +39,7 @@ Skipping the theory behind how this algorithm came to be from the formula above,
 
 To divide the network into more than two communities, the same method as above is applied to the different community subgraphs with a small change. Instead of maximizing the modularity, we try to maximize the contribution to modularity by dividing the subgraph. Alternatively, we subtract the contribution from the modularity matrix towards the previous division and follow the eigenvalue decomposition method for the remaining values.
 
-Hence the modularity matrix for the subgraph to be divided is 
+Hence the modularity matrix for the subgraph to be divided is
 \[
 B_{ij}^{(g)} = B_{ij} - \delta_{ij} \sum_{k\in g} B_{ik}
 \]

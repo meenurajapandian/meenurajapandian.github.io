@@ -3,6 +3,7 @@ layout: blog
 title:  "Graphviz"
 date:   2019-03-1 19:20:41 -0500
 categories: jekyll update
+description: A quick introduction to Git and Github
 ---
 
 Using graphviz
