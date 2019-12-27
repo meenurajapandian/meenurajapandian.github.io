@@ -55,6 +55,7 @@ nav a:hover {
   z-index: 1;
 }
 
+/* Heade */
 .head {
   margin: 0 0 1em 0;
   background-color: #D4D4D4;
@@ -137,6 +138,93 @@ hr.poststyle {
   height: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.project-feed { /*Wrapper for all project titles*/
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -20px;
+    padding: 40px 0 0 0;
+}
+
+.project-card {/*Wrapper for image and title*/
+    flex: 1 1 250px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0 20px 40px;
+    min-height: 300px;
+    background: #fff center center;
+    background-size: cover;
+    border-radius: 5px;
+    box-shadow: rgba(39,44,49,0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
+    transition: all 0.5s ease;
+}
+
+.project-card:hover {
+    box-shadow: 0 0 1px rgba(39,44,49,0.10), 0 3px 16px rgba(39, 44, 49,0.07);
+    transition: all 0.3s ease;
+    transform: translate3D(0, -1px, 0);
+}
+
+.project-card-image-link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+}
+
+.project-card-image {
+    width: auto;
+    height: 200px;
+    background: #ABABAB no-repeat center center;
+    background-size: cover;
+}
+
+.project-card-content-link {
+    position: relative;
+    display: block;
+    padding: 25px 25px 0;
+    color: #ABABAB;
+}
+
+.project-card-content-link:hover {
+    text-decoration: none;
+}
+
+.project-card-header {
+  color: #3D3D3D;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-family: Arial;
+  font-size: 1.5em;
+}
+
+.project-card-tags {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--midgrey);
+    font-size: 1.2rem;
+    line-height: 1.15em;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.project-card-title {
+    margin-top: 0;
+}
+
+.project-card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card-excerpt {
+    font-family: Georgia, serif;
 }
 
 
