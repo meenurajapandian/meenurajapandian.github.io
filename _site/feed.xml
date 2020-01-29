@@ -6,9 +6,106 @@
 </description>
     <link>http://meenurajapandian.github.io/</link>
     <atom:link href="http://meenurajapandian.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 27 Dec 2019 01:51:34 -0500</pubDate>
-    <lastBuildDate>Fri, 27 Dec 2019 01:51:34 -0500</lastBuildDate>
+    <pubDate>Tue, 28 Jan 2020 23:25:35 -0500</pubDate>
+    <lastBuildDate>Tue, 28 Jan 2020 23:25:35 -0500</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Git and GitHub</title>
+        <description>&lt;p&gt;git = version control
+github = web service&lt;/p&gt;
+
+&lt;p&gt;Linux Commands
+cd to go to a certain directory
+pwd current directory (not necessary in git bash)
+ls lists all files and folders in the current directory
+cd .. to go to the previous folders&lt;/p&gt;
+
+&lt;p&gt;repo is on github and it needs to be cloned and the files added.&lt;/p&gt;
+
+&lt;p&gt;repo exists locally, initialize git and put it on github&lt;/p&gt;
+
+&lt;p&gt;Git Bash Commands&lt;/p&gt;
+
+&lt;p&gt;git clone https://github.com/meenurajapandian/direc.git
+clone existing repository on git hub to local directory
+creates a repository just like the one in git hub in the current directory&lt;/p&gt;
+
+&lt;p&gt;git add filename.c
+adds filename to the staging area&lt;/p&gt;
+
+&lt;p&gt;git add -A
+adds all files to the staging area&lt;/p&gt;
+
+&lt;p&gt;git commit -a -m “Commit Message”
+commits the changes made, commit message is compulsory&lt;/p&gt;
+
+&lt;p&gt;git status
+shows the status of the git directory. shows which branch, list of files which are modified but not committed, list of files that are not tracked&lt;/p&gt;
+
+&lt;p&gt;git log -2
+shows the last commit&lt;/p&gt;
+
+&lt;p&gt;:q
+if you find yourself in a weird place&lt;/p&gt;
+
+&lt;p&gt;git remote -v
+lists the branches, list the origin of the github repository&lt;/p&gt;
+
+&lt;p&gt;git push origin master
+to push the changes to github. master is the branch name&lt;/p&gt;
+
+&lt;p&gt;If the current directory is not a git repository&lt;/p&gt;
+
+&lt;p&gt;git init
+initializes empty git&lt;/p&gt;
+
+&lt;p&gt;git add -A
+adds files to staging area&lt;/p&gt;
+
+&lt;p&gt;git commit
+commits the changes that are made&lt;/p&gt;
+
+&lt;p&gt;git remote add origin
+links current local directory with a repo on github&lt;/p&gt;
+
+&lt;p&gt;git push origin master
+push changes to remote&lt;/p&gt;
+
+&lt;p&gt;git pull origin master
+If changes are made on the hub and they need to reflected in the local directory. This has to be done before git push if you have changes in github that are not in the current local directory&lt;/p&gt;
+
+&lt;p&gt;To commit to a new branch
+git checkout -b your-new-branch
+Creates a new branch by the given name
+git add &lt;files&gt;
+git commit -m &quot;message&quot;
+git push origin your-new-branch&lt;/files&gt;&lt;/p&gt;
+
+&lt;p&gt;To tell git not to track some files
+touch .gitignore
+Creates a gitignore file
+git add .gitignore&lt;/p&gt;
+
+&lt;p&gt;.gitignore is a hidden file and needs to be edited to add all files and directory that should not be tracked
+Sample .gitignore file&lt;/p&gt;
+
+&lt;p&gt;directory1/
+directory2/&lt;/p&gt;
+
+&lt;p&gt;file1.csv
+file2.csv&lt;/p&gt;
+</description>
+        <pubDate>Mon, 20 Jan 2020 19:20:41 -0500</pubDate>
+        <link>http://meenurajapandian.github.io/jekyll/update/2020/01/20/git-github.html</link>
+        <guid isPermaLink="true">http://meenurajapandian.github.io/jekyll/update/2020/01/20/git-github.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
     
       <item>
         <title>Continuous Time Markov Chain</title>

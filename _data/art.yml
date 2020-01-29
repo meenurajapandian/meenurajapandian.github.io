@@ -1,19 +1,18 @@
 list:
-
     - first_name: Joaqu&iacute;n
       last_name: Go<span>&#241;</span>i
       affiliation: <b>General Chair</b> </br> CONN<i>plexity</i> Lab,</br> Purdue University
       website: https://engineering.purdue.edu/ConnplexityLab
-      picture: images/experts/goni.jpg
+      picture: arts/some.jpeg
 
     - first_name: Fabrizio
       last_name: De Vico Fallani
       affiliation: <b>Program Co-Chair </b></br>Institute for Brain & Spinal Cord
       website: https://sites.google.com/site/devicofallanifabrizio/
-      picture: images/experts/fabrizio.jpeg
+      picture: arts/some2.jpg
 
     - first_name: Daniele
       last_name: Marinazzo
       affiliation: <b>Program Co-Chair </b></br>University of Ghent
       website: https://users.ugent.be/~dmarinaz/
-      picture: images/experts/marinazzo.jpg
+      picture: arts/some3.jpeg

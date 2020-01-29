@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <div class="content">
+        <!DOCTYPE html>
+<div id="header" class="head">
+    <div style="display: inline-block;">
+        <head>
+            <link rel="stylesheet" href="/css/main.css" >
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+            <script src = "/js/main.js" ></script>
+            Meenu Rajapandian
+        </head>
+    </div>
+    <nav id="nav">
+        <a href="/about">About</a>
+        <a href="/art">Art</a>
+        <a href="/posts">Blog</a>
+        <a href="/projects">Projects</a>
+        <a href="/index">Main</a>
+    </nav>
+</div>
+
+        <div class="blog-inside">
+            <h1><b>Git and GitHub</b></h1>
+            <h6>20 Jan 2020</h6>
+            <div class="blog-content">
+                <p>git = version control
+github = web service</p>
+
+<p>Linux Commands
+cd to go to a certain directory
+pwd current directory (not necessary in git bash)
+ls lists all files and folders in the current directory
+cd .. to go to the previous folders</p>
+
+<p>repo is on github and it needs to be cloned and the files added.</p>
+
+<p>repo exists locally, initialize git and put it on github</p>
+
+<p>Git Bash Commands</p>
+
+<p>git clone https://github.com/meenurajapandian/direc.git
+clone existing repository on git hub to local directory
+creates a repository just like the one in git hub in the current directory</p>
+
+<p>git add filename.c
+adds filename to the staging area</p>
+
+<p>git add -A
+adds all files to the staging area</p>
+
+<p>git commit -a -m “Commit Message”
+commits the changes made, commit message is compulsory</p>
+
+<p>git status
+shows the status of the git directory. shows which branch, list of files which are modified but not committed, list of files that are not tracked</p>
+
+<p>git log -2
+shows the last commit</p>
+
+<p>:q
+if you find yourself in a weird place</p>
+
+<p>git remote -v
+lists the branches, list the origin of the github repository</p>
+
+<p>git push origin master
+to push the changes to github. master is the branch name</p>
+
+<p>If the current directory is not a git repository</p>
+
+<p>git init
+initializes empty git</p>
+
+<p>git add -A
+adds files to staging area</p>
+
+<p>git commit
+commits the changes that are made</p>
+
+<p>git remote add origin
+links current local directory with a repo on github</p>
+
+<p>git push origin master
+push changes to remote</p>
+
+<p>git pull origin master
+If changes are made on the hub and they need to reflected in the local directory. This has to be done before git push if you have changes in github that are not in the current local directory</p>
+
+<p>To commit to a new branch
+git checkout -b your-new-branch
+Creates a new branch by the given name
+git add <files>
+git commit -m "message"
+git push origin your-new-branch</files></p>
+
+<p>To tell git not to track some files
+touch .gitignore
+Creates a gitignore file
+git add .gitignore</p>
+
+<p>.gitignore is a hidden file and needs to be edited to add all files and directory that should not be tracked
+Sample .gitignore file</p>
+
+<p>directory1/
+directory2/</p>
+
+<p>file1.csv
+file2.csv</p>
+
+            </div>
+        </div>
+    </div> <!--To push the footer to the bottom of the page-->
+    <div id="footer" class="foot">
+    <section class="contact">
+        <ul class="icons">
+            <li><a href="https://github.com/meenurajapandian"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/meenusree-rajapandian/"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="mailto:mrajapan@purdue.edu"><i class="fas fa-envelope"></i></a></li>
+            <li><a href="https://twitter.com/_meenu_raj"><i class="fab fa-twitter"></i></a></li>
+        </ul>
+    </section>
+    <div class="copyright">
+        <p> All rights reserved. Designed from scratch with<i class="fas fa-fire" style="color:#7B7A7A; margin-left:5px"></i></p>
+    </div>
+</div>
+
+</html>
