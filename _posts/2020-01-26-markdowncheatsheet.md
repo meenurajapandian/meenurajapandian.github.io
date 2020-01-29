@@ -1,7 +1,7 @@
 ---
 layout: blog
 title:  "Markdown Cheatsheet"
-date:   2020-01-20 19:20:41 -0500
+date:   2020-01-26 19:20:41 -0500
 categories: Guide
 description: A quick introduction to Git and Github
 ---
