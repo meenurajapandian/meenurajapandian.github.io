@@ -4,6 +4,7 @@ title:  "Markdown Cheatsheet"
 date:   2020-01-26 19:20:41 -0500
 categories: Guide
 description: A quick introduction to Git and Github
+markdown: kramdown
 ---
 
 From [adam-p/markdown-here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
