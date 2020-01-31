@@ -23,7 +23,7 @@
         <div class="blog-inside">
             <h1><b>Markdown Cheatsheet</b></h1>
             <h6>26 Jan 2020</h6>
-            <div class="blog-content">
+            <div markdown="1" class="blog-content">
                 <p>From <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">adam-p/markdown-here</a></p>
 
 <h5 id="table-of-contents">Table of Contents</h5>
@@ -392,101 +392,111 @@ This line is part of the same quote.</p>
 <p>```no-highlight</p>
 <dl>
   <dt>Definition list</dt>
-  <dd>Is something people use sometimes.</dd>
+  <dd>
+    <p>Is something people use sometimes.&lt;/dd&gt;</p>
 
-  <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
-</dl>
-<p>```</p>
-
-<dl>
-  <dt>Definition list</dt>
-  <dd>Is something people use sometimes.</dd>
-
-  <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
-</dl>
-
-<p><a name="hr"></a>
-## Horizontal Rule</p>
-
-<p>```
-Three or more…</p>
-
-<hr />
-
-<p>Hyphens</p>
-
-<hr />
-
-<p>Asterisks</p>
-
-<hr />
-
-<p>Underscores
+    <dt>Markdown in HTML</dt>
+    <dd>
+      <p>Does <em>not</em> work <strong>very</strong> well. Use HTML <em>tags</em>.&lt;/dd&gt;
+&lt;/dl&gt;
 ```</p>
 
-<p>Three or more…</p>
+      <dl>
+        <dt>Definition list</dt>
+        <dd>
+          <p>Is something people use sometimes.&lt;/dd&gt;</p>
 
-<hr />
+          <dt>Markdown in HTML</dt>
+          <dd>
+            <p>Does <em>not</em> work <strong>very</strong> well. Use HTML <em>tags</em>.&lt;/dd&gt;
+&lt;/dl&gt;</p>
 
-<p>Hyphens</p>
+            <p><a name="hr"></a>
+## Horizontal Rule</p>
 
-<hr />
+            <p>```
+Three or more…</p>
 
-<p>Asterisks</p>
+            <hr />
 
-<hr />
+            <p>Hyphens</p>
 
-<p>Underscores</p>
+            <hr />
 
-<p><a name="lines"></a>
+            <p>Asterisks</p>
+
+            <hr />
+
+            <p>Underscores
+```</p>
+
+            <p>Three or more…</p>
+
+            <hr />
+
+            <p>Hyphens</p>
+
+            <hr />
+
+            <p>Asterisks</p>
+
+            <hr />
+
+            <p>Underscores</p>
+
+            <p><a name="lines"></a>
 ## Line Breaks</p>
 
-<p>My basic recommendation for learning how line breaks work is to experiment and discover – hit &lt;Enter&gt; once (i.e., insert one newline), then hit it twice (i.e., insert two newlines), see what happens. You’ll soon learn to get what you want. “Markdown Toggle” is your friend.</p>
+            <p>My basic recommendation for learning how line breaks work is to experiment and discover – hit &lt;Enter&gt; once (i.e., insert one newline), then hit it twice (i.e., insert two newlines), see what happens. You’ll soon learn to get what you want. “Markdown Toggle” is your friend.</p>
 
-<p>Here are some things to try out:</p>
+            <p>Here are some things to try out:</p>
 
-<p>```
+            <p>```
 Here’s a line for us to start with.</p>
 
-<p>This line is separated from the one above by two newlines, so it will be a <em>separate paragraph</em>.</p>
+            <p>This line is separated from the one above by two newlines, so it will be a <em>separate paragraph</em>.</p>
 
-<p>This line is also a separate paragraph, but…
+            <p>This line is also a separate paragraph, but…
 This line is only separated by a single newline, so it’s a separate line in the <em>same paragraph</em>.
 ```</p>
 
-<p>Here’s a line for us to start with.</p>
+            <p>Here’s a line for us to start with.</p>
 
-<p>This line is separated from the one above by two newlines, so it will be a <em>separate paragraph</em>.</p>
+            <p>This line is separated from the one above by two newlines, so it will be a <em>separate paragraph</em>.</p>
 
-<p>This line is also begins a separate paragraph, but…
+            <p>This line is also begins a separate paragraph, but…
 This line is only separated by a single newline, so it’s a separate line in the <em>same paragraph</em>.</p>
 
-<p>(Technical note: <em>Markdown Here</em> uses GFM line breaks, so there’s no need to use MD’s two-space line breaks.)</p>
+            <p>(Technical note: <em>Markdown Here</em> uses GFM line breaks, so there’s no need to use MD’s two-space line breaks.)</p>
 
-<p><a name="videos"></a>
+            <p><a name="videos"></a>
 ## Youtube videos</p>
 
-<p>They can’t be added directly but you can add an image with a link to the video like this:</p>
+            <p>They can’t be added directly but you can add an image with a link to the video like this:</p>
 
-<p><code class="highlighter-rouge">no-highlight
+            <p><code class="highlighter-rouge">no-highlight
 &lt;a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=YOUTUBE_VIDEO_ID_HERE
 " target="_blank"&gt;&lt;img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg"
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /&gt;&lt;/a&gt;
 </code></p>
 
-<p>Or, in pure Markdown, but losing the image sizing and border:</p>
+            <p>Or, in pure Markdown, but losing the image sizing and border:</p>
 
-<p><code class="highlighter-rouge">no-highlight
+            <p><code class="highlighter-rouge">no-highlight
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
 </code></p>
 
-<p>Referencing a bug by #bugID in your git commit links it to the slip. For example #1.</p>
+            <p>Referencing a bug by #bugID in your git commit links it to the slip. For example #1.</p>
 
-<hr />
+            <hr />
 
-<p>License: <a href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a></p>
+            <p>License: <a href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a></p>
+          </dd>
+        </dd>
+      </dl>
+    </dd>
+  </dd>
+</dl>
 
             </div>
         </div>

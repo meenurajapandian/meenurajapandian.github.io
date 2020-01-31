@@ -133,6 +133,7 @@ git add .gitignore
 
 .gitignore is a hidden file and needs to be edited to add all files and directory that should not be tracked
 Sample .gitignore file
+
 ```
 directory1/
 directory2/
@@ -140,3 +141,6 @@ directory2/
 file1.csv
 file2.csv
 ```
+
+
+Something

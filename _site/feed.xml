@@ -6,8 +6,8 @@
 </description>
     <link>http://meenurajapandian.github.io/</link>
     <atom:link href="http://meenurajapandian.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 30 Jan 2020 19:02:29 -0500</pubDate>
-    <lastBuildDate>Thu, 30 Jan 2020 19:02:29 -0500</lastBuildDate>
+    <pubDate>Fri, 31 Jan 2020 15:53:01 -0500</pubDate>
+    <lastBuildDate>Fri, 31 Jan 2020 15:53:01 -0500</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -380,101 +380,111 @@ This line is part of the same quote.&lt;/p&gt;
 &lt;p&gt;```no-highlight&lt;/p&gt;
 &lt;dl&gt;
   &lt;dt&gt;Definition list&lt;/dt&gt;
-  &lt;dd&gt;Is something people use sometimes.&lt;/dd&gt;
+  &lt;dd&gt;
+    &lt;p&gt;Is something people use sometimes.&amp;lt;/dd&amp;gt;&lt;/p&gt;
 
-  &lt;dt&gt;Markdown in HTML&lt;/dt&gt;
-  &lt;dd&gt;Does *not* work **very** well. Use HTML &lt;em&gt;tags&lt;/em&gt;.&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;p&gt;```&lt;/p&gt;
-
-&lt;dl&gt;
-  &lt;dt&gt;Definition list&lt;/dt&gt;
-  &lt;dd&gt;Is something people use sometimes.&lt;/dd&gt;
-
-  &lt;dt&gt;Markdown in HTML&lt;/dt&gt;
-  &lt;dd&gt;Does *not* work **very** well. Use HTML &lt;em&gt;tags&lt;/em&gt;.&lt;/dd&gt;
-&lt;/dl&gt;
-
-&lt;p&gt;&lt;a name=&quot;hr&quot;&gt;&lt;/a&gt;
-## Horizontal Rule&lt;/p&gt;
-
-&lt;p&gt;```
-Three or more…&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Hyphens&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Asterisks&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Underscores
+    &lt;dt&gt;Markdown in HTML&lt;/dt&gt;
+    &lt;dd&gt;
+      &lt;p&gt;Does &lt;em&gt;not&lt;/em&gt; work &lt;strong&gt;very&lt;/strong&gt; well. Use HTML &lt;em&gt;tags&lt;/em&gt;.&amp;lt;/dd&amp;gt;
+&amp;lt;/dl&amp;gt;
 ```&lt;/p&gt;
 
-&lt;p&gt;Three or more…&lt;/p&gt;
+      &lt;dl&gt;
+        &lt;dt&gt;Definition list&lt;/dt&gt;
+        &lt;dd&gt;
+          &lt;p&gt;Is something people use sometimes.&amp;lt;/dd&amp;gt;&lt;/p&gt;
 
-&lt;hr /&gt;
+          &lt;dt&gt;Markdown in HTML&lt;/dt&gt;
+          &lt;dd&gt;
+            &lt;p&gt;Does &lt;em&gt;not&lt;/em&gt; work &lt;strong&gt;very&lt;/strong&gt; well. Use HTML &lt;em&gt;tags&lt;/em&gt;.&amp;lt;/dd&amp;gt;
+&amp;lt;/dl&amp;gt;&lt;/p&gt;
 
-&lt;p&gt;Hyphens&lt;/p&gt;
+            &lt;p&gt;&lt;a name=&quot;hr&quot;&gt;&lt;/a&gt;
+## Horizontal Rule&lt;/p&gt;
 
-&lt;hr /&gt;
+            &lt;p&gt;```
+Three or more…&lt;/p&gt;
 
-&lt;p&gt;Asterisks&lt;/p&gt;
+            &lt;hr /&gt;
 
-&lt;hr /&gt;
+            &lt;p&gt;Hyphens&lt;/p&gt;
 
-&lt;p&gt;Underscores&lt;/p&gt;
+            &lt;hr /&gt;
 
-&lt;p&gt;&lt;a name=&quot;lines&quot;&gt;&lt;/a&gt;
+            &lt;p&gt;Asterisks&lt;/p&gt;
+
+            &lt;hr /&gt;
+
+            &lt;p&gt;Underscores
+```&lt;/p&gt;
+
+            &lt;p&gt;Three or more…&lt;/p&gt;
+
+            &lt;hr /&gt;
+
+            &lt;p&gt;Hyphens&lt;/p&gt;
+
+            &lt;hr /&gt;
+
+            &lt;p&gt;Asterisks&lt;/p&gt;
+
+            &lt;hr /&gt;
+
+            &lt;p&gt;Underscores&lt;/p&gt;
+
+            &lt;p&gt;&lt;a name=&quot;lines&quot;&gt;&lt;/a&gt;
 ## Line Breaks&lt;/p&gt;
 
-&lt;p&gt;My basic recommendation for learning how line breaks work is to experiment and discover – hit &amp;lt;Enter&amp;gt; once (i.e., insert one newline), then hit it twice (i.e., insert two newlines), see what happens. You’ll soon learn to get what you want. “Markdown Toggle” is your friend.&lt;/p&gt;
+            &lt;p&gt;My basic recommendation for learning how line breaks work is to experiment and discover – hit &amp;lt;Enter&amp;gt; once (i.e., insert one newline), then hit it twice (i.e., insert two newlines), see what happens. You’ll soon learn to get what you want. “Markdown Toggle” is your friend.&lt;/p&gt;
 
-&lt;p&gt;Here are some things to try out:&lt;/p&gt;
+            &lt;p&gt;Here are some things to try out:&lt;/p&gt;
 
-&lt;p&gt;```
+            &lt;p&gt;```
 Here’s a line for us to start with.&lt;/p&gt;
 
-&lt;p&gt;This line is separated from the one above by two newlines, so it will be a &lt;em&gt;separate paragraph&lt;/em&gt;.&lt;/p&gt;
+            &lt;p&gt;This line is separated from the one above by two newlines, so it will be a &lt;em&gt;separate paragraph&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;This line is also a separate paragraph, but…
+            &lt;p&gt;This line is also a separate paragraph, but…
 This line is only separated by a single newline, so it’s a separate line in the &lt;em&gt;same paragraph&lt;/em&gt;.
 ```&lt;/p&gt;
 
-&lt;p&gt;Here’s a line for us to start with.&lt;/p&gt;
+            &lt;p&gt;Here’s a line for us to start with.&lt;/p&gt;
 
-&lt;p&gt;This line is separated from the one above by two newlines, so it will be a &lt;em&gt;separate paragraph&lt;/em&gt;.&lt;/p&gt;
+            &lt;p&gt;This line is separated from the one above by two newlines, so it will be a &lt;em&gt;separate paragraph&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;This line is also begins a separate paragraph, but…
+            &lt;p&gt;This line is also begins a separate paragraph, but…
 This line is only separated by a single newline, so it’s a separate line in the &lt;em&gt;same paragraph&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;(Technical note: &lt;em&gt;Markdown Here&lt;/em&gt; uses GFM line breaks, so there’s no need to use MD’s two-space line breaks.)&lt;/p&gt;
+            &lt;p&gt;(Technical note: &lt;em&gt;Markdown Here&lt;/em&gt; uses GFM line breaks, so there’s no need to use MD’s two-space line breaks.)&lt;/p&gt;
 
-&lt;p&gt;&lt;a name=&quot;videos&quot;&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;a name=&quot;videos&quot;&gt;&lt;/a&gt;
 ## Youtube videos&lt;/p&gt;
 
-&lt;p&gt;They can’t be added directly but you can add an image with a link to the video like this:&lt;/p&gt;
+            &lt;p&gt;They can’t be added directly but you can add an image with a link to the video like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;no-highlight
+            &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;no-highlight
 &amp;lt;a href=&quot;http://www.youtube.com/watch?feature=player_embedded&amp;amp;v=YOUTUBE_VIDEO_ID_HERE
 &quot; target=&quot;_blank&quot;&amp;gt;&amp;lt;img src=&quot;http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg&quot;
 alt=&quot;IMAGE ALT TEXT HERE&quot; width=&quot;240&quot; height=&quot;180&quot; border=&quot;10&quot; /&amp;gt;&amp;lt;/a&amp;gt;
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Or, in pure Markdown, but losing the image sizing and border:&lt;/p&gt;
+            &lt;p&gt;Or, in pure Markdown, but losing the image sizing and border:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;no-highlight
+            &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;no-highlight
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Referencing a bug by #bugID in your git commit links it to the slip. For example #1.&lt;/p&gt;
+            &lt;p&gt;Referencing a bug by #bugID in your git commit links it to the slip. For example #1.&lt;/p&gt;
 
-&lt;hr /&gt;
+            &lt;hr /&gt;
 
-&lt;p&gt;License: &lt;a href=&quot;https://creativecommons.org/licenses/by/3.0/&quot;&gt;CC-BY&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;License: &lt;a href=&quot;https://creativecommons.org/licenses/by/3.0/&quot;&gt;CC-BY&lt;/a&gt;&lt;/p&gt;
+          &lt;/dd&gt;
+        &lt;/dd&gt;
+      &lt;/dl&gt;
+    &lt;/dd&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;
 </description>
         <pubDate>Sun, 26 Jan 2020 19:20:41 -0500</pubDate>
         <link>http://meenurajapandian.github.io/guide/2020/01/26/markdowncheatsheet.html</link>
@@ -601,14 +611,17 @@ git add .gitignore
 &lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;.gitignore is a hidden file and needs to be edited to add all files and directory that should not be tracked
-Sample .gitignore file
-```
+Sample .gitignore file&lt;/p&gt;
+
+&lt;p&gt;```
 directory1/
 directory2/&lt;/p&gt;
 
 &lt;p&gt;file1.csv
 file2.csv
 ```&lt;/p&gt;
+
+&lt;p&gt;Something&lt;/p&gt;
 </description>
         <pubDate>Mon, 20 Jan 2020 19:20:41 -0500</pubDate>
         <link>http://meenurajapandian.github.io/jekyll/update/2020/01/20/git-github.html</link>
@@ -655,11 +668,13 @@ How would you&lt;/p&gt;
 
 &lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;
+  &lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
 

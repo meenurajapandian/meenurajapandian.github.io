@@ -18,3 +18,6 @@ github_username:  meenurajapandian
 
 # Build settings
 markdown: kramdown
+
+kramdown:
+  parse_block_html: true
