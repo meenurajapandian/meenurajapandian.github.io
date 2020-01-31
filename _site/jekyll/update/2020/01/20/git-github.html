@@ -28,10 +28,10 @@
 github = web service</p>
 
 <p>Linux Commands
-cd to go to a certain directory
-pwd current directory (not necessary in git bash)
-ls lists all files and folders in the current directory
-cd .. to go to the previous folders</p>
+<code class="highlighter-rouge">cd</code> to go to a certain directory
+<code class="highlighter-rouge">pwd</code> current directory (not necessary in git bash)
+<code class="highlighter-rouge">ls</code> lists all files and folders in the current directory
+<code class="highlighter-rouge">cd ..</code> to go to the previous folders</p>
 
 <p>repo is on github and it needs to be cloned and the files added.</p>
 
@@ -39,74 +39,113 @@ cd .. to go to the previous folders</p>
 
 <p>Git Bash Commands</p>
 
-<p>git clone https://github.com/meenurajapandian/direc.git
+<p><code class="highlighter-rouge">
+git clone https://github.com/meenurajapandian/direc.git
+</code>
 clone existing repository on git hub to local directory
 creates a repository just like the one in git hub in the current directory</p>
 
-<p>git add filename.c
+<p><code class="highlighter-rouge">
+git add filename.c
+</code>
 adds filename to the staging area</p>
 
-<p>git add -A
+<p><code class="highlighter-rouge">
+git add -A
+</code>
 adds all files to the staging area</p>
 
-<p>git commit -a -m “Commit Message”
+<p><code class="highlighter-rouge">
+git commit -a -m "Commit Message"
+</code>
 commits the changes made, commit message is compulsory</p>
 
-<p>git status
+<p><code class="highlighter-rouge">
+git status
+</code>
 shows the status of the git directory. shows which branch, list of files which are modified but not committed, list of files that are not tracked</p>
 
-<p>git log -2
+<p><code class="highlighter-rouge">
+git log -2
+</code>
 shows the last commit</p>
 
-<p>:q
+<p><code class="highlighter-rouge">
+:q
+</code>
 if you find yourself in a weird place</p>
 
-<p>git remote -v
+<p><code class="highlighter-rouge">
+git remote -v
+</code>
 lists the branches, list the origin of the github repository</p>
 
-<p>git push origin master
+<p><code class="highlighter-rouge">
+git push origin master
+</code>
 to push the changes to github. master is the branch name</p>
 
 <p>If the current directory is not a git repository</p>
 
-<p>git init
+<p><code class="highlighter-rouge">
+git init
+</code>
 initializes empty git</p>
 
-<p>git add -A
+<p><code class="highlighter-rouge">
+git add -A
+</code>
 adds files to staging area</p>
 
-<p>git commit
+<p><code class="highlighter-rouge">
+git commit
+</code>
 commits the changes that are made</p>
 
-<p>git remote add origin
+<p><code class="highlighter-rouge">
+git remote add origin
+</code>
 links current local directory with a repo on github</p>
 
-<p>git push origin master
+<p><code class="highlighter-rouge">
+git push origin master
+</code>
 push changes to remote</p>
 
-<p>git pull origin master
+<p><code class="highlighter-rouge">
+git pull origin master
+</code>
 If changes are made on the hub and they need to reflected in the local directory. This has to be done before git push if you have changes in github that are not in the current local directory</p>
 
 <p>To commit to a new branch
+<code class="highlighter-rouge">
 git checkout -b your-new-branch
+</code>
 Creates a new branch by the given name
-git add <files>
+<code class="highlighter-rouge">
+git add &lt;files&gt;
 git commit -m "message"
-git push origin your-new-branch</files></p>
+git push origin your-new-branch
+</code></p>
 
 <p>To tell git not to track some files
+<code class="highlighter-rouge">
 touch .gitignore
+</code>
 Creates a gitignore file
-git add .gitignore</p>
+<code class="highlighter-rouge">
+git add .gitignore
+</code></p>
 
 <p>.gitignore is a hidden file and needs to be edited to add all files and directory that should not be tracked
-Sample .gitignore file</p>
-
-<p>directory1/
+Sample .gitignore file
+```
+directory1/
 directory2/</p>
 
 <p>file1.csv
-file2.csv</p>
+file2.csv
+```</p>
 
             </div>
         </div>
