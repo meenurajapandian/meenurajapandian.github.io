@@ -406,6 +406,21 @@ hr.poststyle {
 }
 
 
+.art-feed { /*Wrapper for all project titles*/
+    position: relative;
+    display: flex;
+    flex-flow: row wrap-reverse;
+    justify-content: center;
+    align-content: space-around;
+    align-items: center;
+    margin: 0 -20px;
+    padding: 40px 0 0 0;
+    border-style: solid;
+    border-color: #000000;
+    border-width: thick;
+}
+
+
 /* Contact Icons vertical*/
 ul.icons li{
   display: inline;
