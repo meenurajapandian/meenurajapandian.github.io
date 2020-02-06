@@ -4,6 +4,8 @@ title: Main
 ---
 <div class="art-feed">
 {% for art in site.data.art.list %}
-            <img src="{{ art.picture }}" alt="portrait" style="width: 50%">
+    <article class="art-card">
+            <img src="{{ art.picture }}" alt="portrait" class="art-content">
+    </article>
 {% endfor %}
 </div>

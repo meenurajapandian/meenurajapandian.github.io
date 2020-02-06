@@ -2,17 +2,34 @@
 layout: front
 title: Main
 ---
-<div class="skills">
-  <div class="skill">
-    <i class="fas fa-chart-line fa-2x" style="color: #FFFFFF; margin: 0.8em"></i> <br>
-    <h2> Insights </h2>
-  </div>
-  <div class="skill">
-    <i class="fas fa-dice-d20 fa-2x" style="color: #FFFFFF; margin: 0.8em"></i> <br>
-    <h2> Modelling </h2>
-  </div>
-  <div class="skill">
-    <i class="fas fa-magic fa-2x" style="color: #FFFFFF; margin: 0.8em"></i> <br>
-    <h2> Visualization </h2>
-  </div>
+
+
+<div class="project-feed">
+{% for post in site.posts reversed limit: 5 %}
+    <article class="project-card">
+        <div class="project-card-content">
+            <a class="project-card-content-link" href="{{post.url}}">
+                <header class="project-card-header">
+                    {% if post.tags.size > 0 %}
+                        {% for tag in post.tags %}
+                            {% if forloop.index == post.tags.size %}
+                                <span class="project-card-tags">{{ tag | capitalize }}</span>
+                            {% else %}
+                               <span class="project-card-tags">{{ tag | capitalize }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    <h2 class="project-card-title">{{ post.title }}</h2>
+                </header>
+                <section class="project-card-excerpt">
+                    {% if post.excerpt %}
+                        <p>{{ post.excerpt | strip_html | truncatewords: 33, "" }}</p>
+                    {% else %}
+                        <p>{{ post.content | strip_html | truncatewords: 33, "" }}</p>
+                    {% endif %}
+                </section>
+            </a>
+        </div>
+    </article>
+{% endfor %}
 </div>

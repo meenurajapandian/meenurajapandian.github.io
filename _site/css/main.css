@@ -5,9 +5,9 @@ acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,stron
 sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,
 caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,
 footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video
-{ margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
+{ margin: 0; padding: 0; border: 0; font-size: 100%; font-family: Helvetica; vertical-align: baseline;}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display: block;}
-body { line-height: 1;}
+body { line-height: 1; color: #222222;}
 ol,ul { list-style: none;}
 blockquote,q { quotes: none;}
 blockquote:before,blockquote:after,q:before,q:after { content: ''; content: none;}
@@ -192,6 +192,24 @@ p,
         color: #099; }
 
 
+/* Contact Icons vertical*/
+ul.icons li{
+  display: inline;
+}
+
+/* Font Awesome Icon Styling*/
+i.fas, i.fab{
+  margin-right: 10px;
+  margin-left: 10px;
+  color: #00478A;
+}
+i.fab:hover{
+  color: #1C9DFF;
+}
+i.fas:hover{
+  color: #1C9DFF;
+}
+
 /* DIV CSS*/
 .curtain {
   height: 100vh;
@@ -257,7 +275,7 @@ p,
 }
 
 .overlay {
-  background: rgba(100,100,100,0.65);
+  background: rgba(100,100,100,0.5);
   position: absolute;
   top: 0;
   left: 0;
@@ -314,24 +332,6 @@ nav a:hover {
   padding: 0.5em;
 }
 
-/* Contact Icons vertical*/
-ul.icons li{
-  display: inline;
-}
-
-/* Font Awesome Icon Styling*/
-i.fas, i.fab{
-  margin-right: 10px;
-  margin-left: 10px;
-  color: #00478A;
-}
-i.fab:hover{
-  color: #1C9DFF;
-}
-i.fas:hover{
-  color: #1C9DFF;
-}
-
 .content{
   min-height: 100vh;
 }
@@ -366,7 +366,7 @@ i.fas:hover{
   text-align: center;
 }
 
-.skill > h2 {
+.skill > h3 {
   font-size: 20px;
 }
 
@@ -429,7 +429,8 @@ hr.poststyle {
 .project-feed { /*Wrapper for all project titles*/
     position: relative;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
     margin: 0 -20px;
     padding: 40px 0 0 0;
 }
@@ -515,15 +516,31 @@ hr.poststyle {
 
 
 .art-feed { /*Wrapper for all project titles*/
-    position: relative;
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap-reverse;
+  margin: 0 -20px;
+  padding: 20px 0 0 0;
+}
+.art-card {/*Wrapper for image and title*/
+    flex: 1 1 400px;
     display: flex;
-    flex-flow: row wrap-reverse;
-    justify-content: center;
-    align-content: space-around;
-    align-items: center;
-    margin: 0 -20px;
-    padding: 40px 0 0 0;
-    border-style: solid;
-    border-color: #000000;
-    border-width: thick;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0 5px 10px;
+    max-height: 400px;
+    background: #fff center center;
+    background-size: cover;
+    box-shadow: rgba(39,44,49,0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
+    transition: all 0.5s ease;
+}
+.art-card:hover {
+    box-shadow: 0 0 1px rgba(39,44,49,0.10), 0 3px 16px rgba(39, 44, 49,0.07);
+    transition: all 0.3s ease;
+    transform: translate3D(0, -1px, 0);
+}
+.art-content {
+    min-width: 100%;
+    min-height: 100%;
 }
