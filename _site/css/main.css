@@ -191,6 +191,7 @@ p,
       .highlight .il {
         color: #099; }
 
+
 /* DIV CSS*/
 .curtain {
   height: 100vh;
@@ -242,6 +243,7 @@ p,
     background: rgba(250,250,250,0);
     display: block; /* header 1 is visible by default */
     font-weight: bold;
+    letter-spacing: 0.1px;
     color: #FFFFFF;
 }
 .header-2 {
@@ -312,6 +314,24 @@ nav a:hover {
   padding: 0.5em;
 }
 
+/* Contact Icons vertical*/
+ul.icons li{
+  display: inline;
+}
+
+/* Font Awesome Icon Styling*/
+i.fas, i.fab{
+  margin-right: 10px;
+  margin-left: 10px;
+  color: #00478A;
+}
+i.fab:hover{
+  color: #1C9DFF;
+}
+i.fas:hover{
+  color: #1C9DFF;
+}
+
 .content{
   min-height: 100vh;
 }
@@ -320,6 +340,34 @@ nav a:hover {
   padding-bottom: 10em; /*Trial and Error*/
   padding-left: 15em;
   padding-right: 15em;
+}
+
+.index-inside{
+  padding-bottom: 10em; /*Trial and Error*/
+}
+
+.skills {
+  display: flex;
+  background-color: #56A8E7;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  width: 100%;
+  min-height: 10em;
+}
+
+.skill {
+  color: #FFFFFF;
+  font-family: Helvetica;
+  padding: 1em;
+  margin-bottom: 25px;
+  margin-top: 15px;
+  width: 30%;
+  text-align: center;
+}
+
+.skill > h2 {
+  font-size: 20px;
 }
 
 .blog-inside{
@@ -478,23 +526,4 @@ hr.poststyle {
     border-style: solid;
     border-color: #000000;
     border-width: thick;
-}
-
-
-/* Contact Icons vertical*/
-ul.icons li{
-  display: inline;
-}
-
-/* Font Awesome Icon Styling*/
-i.fas, i.fab{
-  margin-right: 10px;
-  margin-left: 10px;
-  color: #00478A;
-}
-i.fab:hover{
-  color: #1C9DFF;
-}
-i.fas:hover{
-  color: #1C9DFF;
 }
