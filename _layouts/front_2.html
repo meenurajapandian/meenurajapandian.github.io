@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<div class="curtain" onclick="reveal()">
+  <h1> Fancy Quote. </h1>
+</div>
+<div class = "everything">
+    <div class="content">
+        {% include header.html %}
+        <div class="content-inside">
+            {{content}}
+        </div>
+    </div> <!--To push the footer to the bottom of the page-->
+    {% include footer.html %}
+</div>
+</html>

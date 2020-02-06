@@ -191,26 +191,6 @@ p,
       .highlight .il {
         color: #099; }
 
-/* for the menu on the top */
-nav {
-  float: right;
-}
-
-nav > a{
-  display: block;
-  float: right;
-  font-size: 0.6em;
-  color: #000000;
-  padding-top: 0.5em;
-  padding-right: 1em;
-  padding-left: 1em;
-  text-decoration: none;
-}
-
-nav a:hover {
-
-}
-
 /* DIV CSS*/
 .curtain {
   height: 100vh;
@@ -236,17 +216,97 @@ nav a:hover {
 /* Header */
 .head {
   margin: 0 0 1em 0;
-  background-color: #D4D4D4;
-  font-family: Arial;
+  background-color: #F2FAFF;
+  color: #00478A;
+  font-family: Helvetica;
   font-size: 2em;
   padding: 1em;
   padding-left: 0.5em;
 }
 
+.header {
+  font-family: Helvetica;
+  font-size: 1.5em;
+  margin: 0 0 1em 0;
+  padding: 1em;
+  padding-left: 0.5em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+  z-index: 1;
+
+}
+.header-1 {
+    background: rgba(250,250,250,0);
+    display: block; /* header 1 is visible by default */
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.header-2 {
+    background-color: #F2FAFF;
+    font-size: 1.5em;
+    color: #00478A;
+}
+
+.site-title {
+  display: inline-block;
+}
+
+.overlay {
+  background: rgba(100,100,100,0.65);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 0;
+  color: #FFFFFF;
+  font-size: 10em;
+  text-align: center;
+}
+
+.cover-image {
+  position: static;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+}
+/* for the menu on the top */
+nav {
+  float: right;
+  color: inherit;
+  font-family: inherit;
+  font-weight: normal;
+  padding-right: 2em;
+}
+
+nav > a{
+  display: block;
+  float: right;
+  font-size: 0.6em;
+  padding-top: 0.5em;
+  padding-right: 1em;
+  padding-left: 1em;
+  text-decoration: none;
+}
+
+nav a, a:visited, a:active {
+  color: inherit;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
 .foot {
   margin-top: -3.5em; /*height + padding top and bottom*/
   height: 2.5em;
-  background-color: #D4D4D4;
+  background-color: #F2FAFF;
+  color: #013156;
   font-family: Arial;
   font-size: 2em;
   padding: 0.5em;
@@ -288,7 +348,7 @@ nav a:hover {
   margin: 0.5em;
 }
 .copyright{
-  color: #7B7A7A;
+  color: #013156;
   font-size: 0.25em;
   text-align: center;
 }
@@ -430,11 +490,11 @@ ul.icons li{
 i.fas, i.fab{
   margin-right: 10px;
   margin-left: 10px;
-  color: #FFFFFF;
+  color: #00478A;
 }
 i.fab:hover{
-  color: #000000;
+  color: #1C9DFF;
 }
 i.fas:hover{
-  color: #000000;
+  color: #1C9DFF;
 }

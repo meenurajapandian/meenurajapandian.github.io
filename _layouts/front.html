@@ -1,15 +1,50 @@
 <!DOCTYPE html>
 <html>
-<div class="curtain" onclick="reveal()">
-  <h1> Fancy Quote. </h1>
-</div>
-<div class = "everything">
+  <head>
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css" >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src = "{{site.baseurl}}/js/header.js" ></script>
+  </head>
     <div class="content">
-        {% include header.html %}
-        <div class="content-inside">
-            {{content}}
-        </div>
+      <div id="header" class="header header-1" data-visible-range="0-5">
+          <div class="site-title">
+              <head>
+                  {{ site.title }}
+              </head>
+          </div>
+          <nav id="nav">
+              <a href="/about">About</a>
+              <a href="/art">Art</a>
+              <a href="/posts">Blog</a>
+              <a href="/projects">Projects</a>
+              <a href="/index">Main</a>
+          </nav>
+      </div>
+      <div id="header" class="header header-2" data-visible-range="101 -">
+          <div class="site-title">
+              <head>
+                  {{ site.title }}
+              </head>
+          </div>
+          <nav id="nav">
+              <a href="/about">About</a>
+              <a href="/art">Art</a>
+              <a href="/posts">Blog</a>
+              <a href="/projects">Projects</a>
+              <a href="/index">Main</a>
+          </nav>
+      </div>
+      <div class="overlay">
+        
+      </div>
+      <div class="cover-image">
+      <img src="{{ site.baseurl }}/cover.JPG" alt="portrait" style="width:100%">
+      </div>
+
+      <div class="content-inside">
+          {{content}}
+      </div>
     </div> <!--To push the footer to the bottom of the page-->
     {% include footer.html %}
-</div>
 </html>
