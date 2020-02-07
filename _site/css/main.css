@@ -348,8 +348,7 @@ nav a:hover {
 
 .intro {
   display: flex;
-  min-height: 100px; 
-
+  min-height: 300px;
 }
 
 .intro-content {
@@ -358,21 +357,22 @@ nav a:hover {
 
 .skills {
   display: flex;
-  background-color: #56A8E7;
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-around;
+  background-color: #56A8E7;
   width: 100%;
   min-height: 10em;
 }
 
 .skill {
+  flex: 1 1 20%;
   color: #FFFFFF;
+  background-color: #56A8E7;
   font-family: Helvetica;
   padding: 1em;
-  margin-bottom: 25px;
-  margin-top: 15px;
-  width: 30%;
+  padding-bottom: 35px;
+  padding-top: 40px;
   text-align: center;
 }
 
