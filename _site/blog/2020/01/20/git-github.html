@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <div class="content">
+        <!DOCTYPE html>
+<div id="header" class="head">
+    <div class="site-title">
+        <head>
+            <link rel="stylesheet" href="/css/main.css" >
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+            <script src = "/js/main.js" ></script>
+            Meenu Rajapandian
+        </head>
+    </div>
+    <nav id="nav">
+        <a href="/about">About</a>
+        <a href="/art">Art</a>
+        <a href="/posts">Blog</a>
+        <a href="/projects">Projects</a>
+        <a href="/index">Main</a>
+    </nav>
+</div>
+
+        <div class="blog-inside">
+            <h1><b>Git and Github</b></h1>
+            <h6>20 Jan 2020</h6>
+            <div markdown="1" class="blog-content">
+                <p>Git is a distributed version control system. A version control system handles different versions of a project as it evolves especially when many people are contributing toward the same project. Github on the other hand is … But I don’t want to elaborate on them as much. Let’s just jump to actually using git for your projects.</p>
+
+<p>Usually people want to use github in one of these circumstances.</p>
+
+<p>They already have a some files as part of the project and want to put it on github or start using git for</p>
+
+<p>You are starting completely new and you still don’t have anything yet</p>
+
+<p>Follow these steps for option 1
+<code class="highlighter-rouge">
+git init
+</code></p>
+
+<p><code class="highlighter-rouge">
+git add -A
+</code>
+adds files to staging area</p>
+
+<p><code class="highlighter-rouge">
+git commit
+</code>
+commits the changes that are made</p>
+
+<p><code class="highlighter-rouge">
+git remote add origin
+</code>
+links current local directory with a repo on github</p>
+
+<p><code class="highlighter-rouge">
+git push origin master
+</code>
+push changes to remote</p>
+
+<p><code class="highlighter-rouge">
+git pull origin master
+</code>
+If changes are made on the hub and they need to reflected in the local directory. This has to be done before git push if you have changes in github that are not in the current local directory</p>
+
+<p>For Option 2 - starting fresh or from repo in github
+<code class="highlighter-rouge">
+git clone https://github.com/meenurajapandian/direc.git
+</code>
+clone existing repository on git hub to local directory
+creates a repository just like the one in git hub in the current directory</p>
+
+<p><code class="highlighter-rouge">
+git add filename.c
+</code>
+adds filename to the staging area</p>
+
+<p><code class="highlighter-rouge">
+git add -A
+</code>
+adds all files to the staging area</p>
+
+<p><code class="highlighter-rouge">
+git commit -a -m "Commit Message"
+</code>
+commits the changes made, commit message is compulsory</p>
+
+<p>As you continue to use git and github you might come across times where you want to try something different for the project but do not want to mess up your current state of the project just yet. In that case you can create a new branch and work on that branch instead of your main master branch. This is the git’s version of naming your files differently so that you can keep track of them. No more final.py final_v1.py final_final_v7.py</p>
+
+<p><code class="highlighter-rouge">
+git checkout -b your-new-branch
+</code>
+Creates a new branch by the given name
+<code class="highlighter-rouge">
+git add &lt;files&gt;
+git commit -m "message"
+git push origin your-new-branch
+</code></p>
+
+<p>Now the changes are made only in the new branch. To go back to master
+<code class="highlighter-rouge">
+git checkout -b master
+</code>
+To list all branches in github
+<code class="highlighter-rouge">
+git remote -v
+</code></p>
+
+<p>Once you’ve made awesome progress with the new branch and have a change in the new branch that you want to merge with the master so that this now becomes like the final proper version,</p>
+
+<p>Include stuff about making a pull request</p>
+
+<p>A number of times we have a lot of working files in our local repository which we do not want on github. They might list of things to do, large data files (which git might refuse to put on the hub), etc. But these files are always listed as untracked files and means we have to list each file we want to add instead of using git add -A. In these circumstances (even otherwise) it is good to maintain a gitignore file which will contain the list of all files and folders that you do not want git to track i.e. ignore.</p>
+
+<p><code class="highlighter-rouge">
+touch .gitignore
+</code>
+Creates a gitignore file
+<code class="highlighter-rouge">
+git add .gitignore
+</code></p>
+
+<p>.gitignore is a hidden file and needs to be edited to add all files and directory that should not be tracked
+Sample .gitignore file</p>
+
+<p>```
+directory1/
+directory2/</p>
+
+<p>file1.csv
+file2.csv
+```</p>
+
+<p>References:</p>
+
+            </div>
+        </div>
+    </div> <!--To push the footer to the bottom of the page-->
+    <div id="footer" class="foot">
+    <section class="contact">
+        <ul class="icons">
+            <li><a href="https://github.com/meenurajapandian"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/meenusree-rajapandian/"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="mailto:mrajapan@purdue.edu"><i class="fas fa-envelope"></i></a></li>
+            <li><a href="https://twitter.com/_meenu_raj"><i class="fab fa-twitter"></i></a></li>
+        </ul>
+    </section>
+    <div class="copyright">
+        <p> All rights reserved. Designed from scratch with<i class="fas fa-fire" style="color:#7B7A7A; margin-left:5px"></i></p>
+    </div>
+</div>
+
+</html>

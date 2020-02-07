@@ -346,6 +346,16 @@ nav a:hover {
   padding-bottom: 10em; /*Trial and Error*/
 }
 
+.intro {
+  display: flex;
+  min-height: 100px; 
+
+}
+
+.intro-content {
+
+}
+
 .skills {
   display: flex;
   background-color: #56A8E7;
@@ -435,7 +445,7 @@ hr.poststyle {
     padding: 40px 0 0 0;
 }
 
-.project-card {/*Wrapper for image and title*/
+.project-card { /*Wrapper for image and title*/
     flex: 1 1 250px;
     display: flex;
     flex-direction: column;
