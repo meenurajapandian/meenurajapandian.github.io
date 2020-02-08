@@ -35,7 +35,19 @@ title: Main
 </div>
 
 <!-- Publications -->
+{% for post in site.data.publications.list %}
 
+<article class="post-preview">
+  <a href="{{ post.url }}">
+    <h3 class="post-title">{{ post.title }}</h3>
+    <h4 class="post-description"> <i> {{ post.authors }} </i></h4>
+    <h4 class="post-description"> {{ post.journal }} </h4>
+  </a>
+</article>
+
+<hr class="poststyle">
+
+{% endfor %}
 
 <!-- Blog-->
 <div class="project-feed">

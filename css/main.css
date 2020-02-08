@@ -414,20 +414,26 @@ nav a:hover {
 .post-preview > a {
   text-decoration: none;
 }
+
 .post-title {
   color: #3D3D3D;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   font-family: Arial;
-  font-size: 1.5em;
 }
+
 .post-description {
+  /* display: inline; To remove newline after header */
   color: #727272;
-  font-weight: 300;
   margin: 0 0 0.5em;
   font-family: Arial;
-  font-size: 1em;
+  font-weight: normal;
 }
+
+.post-description-blog {
+  font-weight: 300;
+}
+
 
 hr.poststyle {
   border: 0;
