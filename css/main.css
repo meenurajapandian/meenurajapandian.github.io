@@ -346,6 +346,16 @@ nav a:hover {
   padding-bottom: 10em; /*Trial and Error*/
 }
 
+.index-part{
+  min-height: 40px;
+  padding: 10px 0px;
+}
+
+.index-part h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
 .intro {
   display: flex;
   min-height: 300px;
@@ -376,7 +386,7 @@ nav a:hover {
   text-align: center;
 }
 
-.skill > h3 {
+.skill h3 {
   font-size: 20px;
 }
 
@@ -448,7 +458,7 @@ hr.poststyle {
     flex-direction: row-reverse;
     flex-wrap: wrap-reverse;
     margin: 0 -20px;
-    padding: 40px 0 0 0;
+    padding: 10px 0 0 0;
 }
 
 .project-card { /*Wrapper for image and title*/
