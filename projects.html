@@ -3,7 +3,7 @@ layout: default
 title: Projects
 ---
 <div class="project-feed">
-{% for post in site.projects reversed%}
+{% for post in site.categories.projects reversed%}
     <article class="project-card">
         <div class="project-card-content">
             <a class="project-card-content-link" href="{{post.url}}">
