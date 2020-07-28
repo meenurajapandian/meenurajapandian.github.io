@@ -51,6 +51,7 @@ pre > code {
 
 p,
 .highlight {
+  line-height: normal;
     margin-bottom: 15px; }
 
 .highlight {
@@ -198,17 +199,15 @@ ul.icons li{
 }
 
 /* Font Awesome Icon Styling*/
-i.fas, i.fab{
+i.fa{
   margin-right: 10px;
   margin-left: 10px;
   color: #00478A !important;
 }
-i.fab:hover{
+i.fa:hover{
   color: #1C9DFF !important;
 }
-i.fas:hover{
-  color: #1C9DFF !important;
-}
+
 
 /* DIV CSS*/
 .curtain {
