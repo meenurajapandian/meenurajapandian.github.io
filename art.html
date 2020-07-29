@@ -3,7 +3,7 @@ layout: default
 title: Art
 ---
 <div class="art-feed">
-{% for art in site.data.art.list %}
+{% for art in site.data.art.list reversed %}
     <article class="art-card">
             <img src="{{ art.picture }}" alt="{{ art.name }}" class="art-content">
     </article>
