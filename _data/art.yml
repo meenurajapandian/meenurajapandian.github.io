@@ -1,18 +1,15 @@
 list:
-    - first_name: Joaqu&iacute;n
-      last_name: Go<span>&#241;</span>i
-      affiliation: <b>General Chair</b> </br> CONN<i>plexity</i> Lab,</br> Purdue University
-      website: https://engineering.purdue.edu/ConnplexityLab
-      picture: arts/some.jpeg
+    - name: Monsters in my Head
+      picture: art/Monsters.jpg
 
-    - first_name: Fabrizio
-      last_name: De Vico Fallani
-      affiliation: <b>Program Co-Chair </b></br>Institute for Brain & Spinal Cord
-      website: https://sites.google.com/site/devicofallanifabrizio/
-      picture: arts/some2.jpg
+    - name: Amarendra Bahubali
+      picture: art/Bahubali.jpg
 
-    - first_name: Daniele
-      last_name: Marinazzo
-      affiliation: <b>Program Co-Chair </b></br>University of Ghent
-      website: https://users.ugent.be/~dmarinaz/
-      picture: arts/some3.jpeg
+    - name: Ed Edd Eddy
+      picture: art/Ed-Edd-Eddy.jpg
+
+    - name: Addams Family
+      picture: art/Addams Family.jpg
+
+    - name: Dexter's Laboratory
+      picture: art/Dexter.jpg
