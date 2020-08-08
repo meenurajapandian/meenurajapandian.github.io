@@ -367,6 +367,7 @@ nav a:hover {
 
 .about-section {
   width: 50%;
+  position: relative;
 }
 
 .skills {
