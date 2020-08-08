@@ -360,7 +360,14 @@ nav a:hover {
   min-height: 300px;
 }
 
+.about {
+  text-align: center;
+  line-height: 1.5em;
+}
 
+.about-section {
+  width: 50%;
+}
 
 .skills {
   display: flex;
