@@ -196,6 +196,7 @@ p,
 /* Contact Icons vertical*/
 ul.icons li{
   display: inline;
+  color: #00478A !important;
 }
 
 /* Font Awesome Icon Styling*/
