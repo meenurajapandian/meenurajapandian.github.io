@@ -199,12 +199,12 @@ ul.icons li{
 }
 
 /* Font Awesome Icon Styling*/
-.icons{
+.icon{
   margin-right: 10px;
   margin-left: 10px;
   color: #00478A !important;
 }
-.icons:hover{
+.icon:hover{
   color: #1C9DFF !important;
 }
 
