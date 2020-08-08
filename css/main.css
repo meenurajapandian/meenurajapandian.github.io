@@ -196,16 +196,15 @@ p,
 /* Contact Icons vertical*/
 ul.icons li{
   display: inline;
-  color: #00478A !important;
 }
 
 /* Font Awesome Icon Styling*/
-.icon{
+.icons{
   margin-right: 10px;
   margin-left: 10px;
   color: #00478A !important;
 }
-.icon:hover{
+.icons:hover{
   color: #1C9DFF !important;
 }
 
