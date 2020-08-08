@@ -368,6 +368,14 @@ nav a:hover {
   position: relative;
 }
 
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
 .skills {
   display: flex;
   flex-wrap: wrap;
