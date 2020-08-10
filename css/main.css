@@ -6,7 +6,7 @@ sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,
 caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,
 footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video
 { margin: 0; padding: 0; border: 0; font-size: 100%; font-family: 'Open Sans', sans-serif !important; vertical-align: baseline; text-decoration: none;}
-a {cursor: pointer;}
+a {text-decoration: none; cursor: pointer;}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display: block;}
 body { line-height: 1; color: #222222;}
 ol,ul { list-style: none;}
@@ -312,7 +312,6 @@ nav > a{
   padding-top: 0.5em;
   padding-right: 1em;
   padding-left: 1em;
-  text-decoration: none;
 }
 
 nav a, a:visited, a:active {
@@ -435,9 +434,6 @@ nav a:hover {
   text-align: center;
 }
 
-.post-preview > a {
-  text-decoration: none;
-}
 
 .post-title {
   color: #3D3D3D;
@@ -514,10 +510,6 @@ hr.poststyle {
     display: block;
     padding: 25px 25px 0;
     color: #ABABAB;
-}
-
-.project-card-content-link:hover {
-    text-decoration: none;
 }
 
 .project-card-header {
