@@ -200,6 +200,8 @@ ul.icons li{
 
 /* Font Awesome Icon Styling*/
 .icon{
+  margin-left: 10px;
+  margin-right: 10px;
   color: #00478A !important;
 }
 .icon:hover{
@@ -365,15 +367,14 @@ nav a:hover {
 
 .about-section {
   width: 50%;
-  position: relative;
-}
-
-.float-left {
-  float: left;
 }
 
 .float-right {
   float: right;
+}
+
+.float-left {
+  float: left;
 }
 
 .skills {
