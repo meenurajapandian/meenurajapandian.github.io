@@ -358,7 +358,8 @@ nav a:hover {
 
 .intro {
   display: flex;
-  min-height: 300px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .about {
