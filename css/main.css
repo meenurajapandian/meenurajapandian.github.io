@@ -370,6 +370,7 @@ nav a:hover {
 .about-section {
   width: 50%;
   height: 50vh;
+  line-height: 2em;
 }
 
 .float-right {
