@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "Git and Github"
-date: 2020-01-20 12:00:00 -0500
+date: 2022-01-20 12:00:00 -0500
 categories: blog
 description: A quick guide to start using Git and Github
 ---
