@@ -368,11 +368,11 @@ nav a:hover {
 }
 
 .about-section {
-  width: 50%;
+  width: 35%;
   height: 50vh;
   line-height: 1.5em;
   text-align: left;
-  margin: 3em;
+  padding: 3em;
 }
 
 .float-right {
