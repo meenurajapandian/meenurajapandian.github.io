@@ -1,0 +1,52 @@
+---
+import Expandable from './Expandable.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+const { title, description, goal, result, tools } = project.data;
+const hasDetail = goal || result;
+---
+
+<article class="card">
+  <h3>{title}</h3>
+  {description && <p>{description}</p>}
+  {tools && <p class="tag mono">{tools}</p>}
+
+  {
+    hasDetail && (
+      <Expandable label="more detail">
+        {goal && (
+          <p>
+            <strong>Goal:</strong>
+            <Fragment set:html={' ' + goal} />
+          </p>
+        )}
+        {result && (
+          <p>
+            <strong>Result:</strong> {result}
+          </p>
+        )}
+      </Expandable>
+    )
+  }
+</article>
+
+<style>
+  .card {
+    background: var(--bg-raised);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  .card h3 {
+    margin-bottom: 0.4rem;
+  }
+
+  .card .tag {
+    margin-top: 0.75rem;
+  }
+</style>

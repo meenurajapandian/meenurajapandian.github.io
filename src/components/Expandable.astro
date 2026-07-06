@@ -1,0 +1,20 @@
+---
+interface Props {
+  label?: string;
+}
+
+const { label = 'details' } = Astro.props;
+---
+
+<details class="expandable">
+  <summary>{label}</summary>
+  <div class="expandable-body">
+    <slot />
+  </div>
+</details>
+
+<style>
+  .expandable-body {
+    padding-top: 0.75em;
+  }
+</style>

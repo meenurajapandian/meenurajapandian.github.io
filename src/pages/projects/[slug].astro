@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+const { title, description, goal, result, tools, date } = project.data;
+const { Content } = await render(project);
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="wrap page">
+    <a class="mono back" href="/projects/">&larr; all projects</a>
+    <h1>{title}</h1>
+    <p class="mono meta">{date.getFullYear()}</p>
+    {description && <p class="lead">{description}</p>}
+    {goal && <p><strong>Goal:</strong> <Fragment set:html={' ' + goal} /></p>}
+    {result && <p><strong>Result:</strong> {result}</p>}
+    {tools && <p class="tag mono">{tools}</p>}
+    <div class="content">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .page {
+    padding-block: clamp(2rem, 6vw, 4rem);
+    max-width: 720px;
+  }
+
+  .back {
+    color: var(--secondary);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+  }
+
+  .meta,
+  .lead {
+    color: var(--text-muted);
+  }
+
+  .content {
+    margin-top: 2rem;
+    line-height: 1.7;
+  }
+</style>

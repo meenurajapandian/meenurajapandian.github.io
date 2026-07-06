@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Panel from '../components/Panel.astro';
+import SkillIcon from '../components/SkillIcon.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const allProjects = await getCollection('projects');
+const featured = allProjects.filter((p) => p.data.featured).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const skills = [
+  { name: 'chart' as const, label: 'Statistical modeling' },
+  { name: 'architecture' as const, label: 'ML systems architecture' },
+  { name: 'database' as const, label: 'Data infrastructure & engineering' },
+  { name: 'git' as const, label: 'Network science' },
+  { name: 'code' as const, label: 'AI-augmented workflow' },
+];
+---
+
+<BaseLayout title="Home" description="Meenu Rajapandian — applied scientist. Data science, machine learning, and network analysis.">
+  <div class="panel-scroller">
+    <Panel id="hero">
+      <Fragment slot="a">
+        <img src="/images/hero-placeholder.jpg" alt="Meenu Rajapandian" class="hero-photo" />
+      </Fragment>
+      <Fragment slot="b">
+        <span class="eyebrow">applied scientist</span>
+        <h1>Meenu Rajapandian</h1>
+        <p class="lead">
+          Placeholder bio — a few sentences about the work I do, the problems I like solving, and what
+          I'm looking for next.
+        </p>
+        <div class="cta-row">
+          <a class="button button--primary" href="/about/">view my resume</a>
+          <a class="button button--ghost" href="/projects/">see my projects</a>
+        </div>
+      </Fragment>
+    </Panel>
+
+    <Panel id="skills" eyebrow="skills" tint>
+      <Fragment slot="a">
+        <h2>What I work with</h2>
+        <p>
+          A blend of applied statistics, machine learning, and the software engineering to ship it —
+          plus the network-science background this all grew out of.
+        </p>
+      </Fragment>
+      <Fragment slot="b">
+        <ul class="skill-grid">
+          {
+            skills.map((skill) => (
+              <li>
+                <SkillIcon name={skill.name} label={skill.label} />
+              </li>
+            ))
+          }
+        </ul>
+      </Fragment>
+    </Panel>
+
+    <Panel id="projects" eyebrow="featured projects" reverse>
+      <Fragment slot="a">
+        <div class="project-grid">
+          {featured.map((project) => <ProjectCard project={project} />)}
+        </div>
+      </Fragment>
+      <Fragment slot="b">
+        <h2>Recent work</h2>
+        <p>A couple of projects that show how I turn data into a story.</p>
+        <a class="button button--ghost" href="/projects/">all projects</a>
+      </Fragment>
+    </Panel>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-photo {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+    margin-inline: auto;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 40ch;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .skill-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  @media (max-width: 500px) {
+    .skill-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .project-grid {
+    display: grid;
+    gap: 1rem;
+  }
+</style>

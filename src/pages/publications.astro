@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { publications } from '../content/data/publications';
+---
+
+<BaseLayout title="Publications" description="Research publications by Meenu Rajapandian.">
+  <div class="wrap page">
+    <span class="eyebrow">publications</span>
+    <h1>Publications</h1>
+    <ul class="pub-list">
+      {
+        publications.map((pub) => (
+          <li>
+            <a href={pub.url} class="pub-title">
+              {pub.title}
+            </a>
+            <p class="mono authors" set:html={pub.authors} />
+            <p class="mono journal">{pub.journal}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</BaseLayout>
+
+<style>
+  .page {
+    padding-block: clamp(2rem, 6vw, 4rem);
+    max-width: 720px;
+  }
+
+  .pub-list {
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+  }
+
+  .pub-list li {
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .pub-title {
+    font-size: 1.05rem;
+    text-decoration: none;
+    color: var(--text);
+  }
+
+  .pub-title:hover {
+    color: var(--accent-text);
+  }
+
+  .authors {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 0.5rem 0 0.15rem;
+  }
+
+  .journal {
+    color: var(--secondary);
+    font-size: 0.85rem;
+    margin: 0;
+  }
+</style>

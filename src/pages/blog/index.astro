@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title="Blog" description="Notes and guides by Meenu Rajapandian.">
+  <div class="wrap page">
+    <span class="eyebrow">blog</span>
+    <h1>Blog</h1>
+    <ul class="post-list">
+      {
+        posts.map((post) => (
+          <li>
+            <a href={`/blog/${post.id}/`} class="post-title">
+              {post.data.title}
+            </a>
+            {post.data.description && <p>{post.data.description}</p>}
+            <p class="mono date">{post.data.date.getFullYear()}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</BaseLayout>
+
+<style>
+  .page {
+    padding-block: clamp(2rem, 6vw, 4rem);
+    max-width: 720px;
+  }
+
+  .post-list {
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+  }
+
+  .post-list li {
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .post-title {
+    font-size: 1.05rem;
+    text-decoration: none;
+    color: var(--text);
+  }
+
+  .post-title:hover {
+    color: var(--accent-text);
+  }
+
+  .post-list p {
+    color: var(--text-muted);
+    margin: 0.4rem 0 0;
+  }
+
+  .date {
+    color: var(--secondary);
+    font-size: 0.8rem;
+  }
+</style>

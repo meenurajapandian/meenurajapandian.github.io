@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WorkEntry from '../components/WorkEntry.astro';
+import { work } from '../content/data/work';
+import { education, skills, tools } from '../content/data/education';
+
+const socials = [
+  { href: 'https://github.com/meenurajapandian', label: 'GitHub', icon: 'fa-brands fa-github' },
+  {
+    href: 'https://www.linkedin.com/in/meenusree-rajapandian/',
+    label: 'LinkedIn',
+    icon: 'fa-brands fa-linkedin',
+  },
+  { href: 'mailto:meenushreeji@gmail.com', label: 'Email', icon: 'fa-solid fa-envelope' },
+  {
+    href: 'https://scholar.google.com/citations?user=Ai6lbC0AAAAJ',
+    label: 'Google Scholar',
+    icon: 'fa-solid fa-graduation-cap',
+  },
+];
+---
+
+<BaseLayout title="About" description="Meenu Rajapandian's background, education, and work experience.">
+  <div class="wrap about-grid">
+    <div class="col-a">
+      <span class="eyebrow">about</span>
+      <h1>Meenu Rajapandian</h1>
+      <p class="lead">
+        Placeholder — a fuller version of the bio, written for someone who wants the whole picture, not
+        just the highlight reel.
+      </p>
+      <ul class="socials">
+        {
+          socials.map((s) => (
+            <li>
+              <a href={s.href} aria-label={s.label} title={s.label}>
+                <i class={s.icon} aria-hidden="true" />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="col-b">
+      <section>
+        <h2>Work</h2>
+        {work.map((entry) => <WorkEntry entry={entry} />)}
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        {
+          education.map((e) => (
+            <div class="edu-entry">
+              <div class="edu-head">
+                <strong>{e.school}</strong>
+                <span class="mono range">
+                  {e.start}–{e.end}
+                </span>
+              </div>
+              <p>{e.degree}</p>
+            </div>
+          ))
+        }
+      </section>
+
+      <section>
+        <h2>Skills</h2>
+        <ul class="chip-list">
+          {skills.map((s) => <li class="tag">{s}</li>)}
+        </ul>
+      </section>
+
+      <section>
+        <h2>Tools & frameworks</h2>
+        <ul class="chip-list">
+          {tools.map((t) => <li class="tag">{t}</li>)}
+        </ul>
+      </section>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: var(--gap);
+    padding-block: clamp(2rem, 6vw, 4rem);
+    align-items: start;
+  }
+
+  .col-a {
+    position: sticky;
+    top: 6rem;
+  }
+
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .col-a {
+      position: static;
+    }
+  }
+
+  .lead {
+    color: var(--text-muted);
+  }
+
+  .socials {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .socials a {
+    display: flex;
+    text-decoration: none;
+    color: var(--secondary);
+  }
+
+  .socials a:hover {
+    color: var(--accent-text);
+  }
+
+  section {
+    margin-bottom: 2.5rem;
+  }
+
+  .edu-entry {
+    margin-bottom: 1rem;
+  }
+
+  .edu-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .range {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .chip-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+</style>

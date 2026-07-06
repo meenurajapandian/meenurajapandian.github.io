@@ -1,0 +1,44 @@
+---
+interface Props {
+  name: 'chart' | 'database' | 'code' | 'cloud' | 'git' | 'architecture';
+  label: string;
+}
+
+const { name, label } = Astro.props;
+
+const icons: Record<Props['name'], string> = {
+  chart:
+    '<path d="M4 19V10M10 19V5M16 19v-7M22 19H2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>',
+  database:
+    '<ellipse cx="12" cy="5" rx="8" ry="3" stroke="currentColor" stroke-width="1.6"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>',
+  code: '<path d="M8 6 2 12l6 6M16 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>',
+  cloud:
+    '<path d="M6.5 19a4.5 4.5 0 0 1-.4-8.98A6 6 0 0 1 18 9.5a4 4 0 0 1-1 7.9H6.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>',
+  git: '<circle cx="6" cy="6" r="2.2" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="18" r="2.2" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="6" r="2.2" stroke="currentColor" stroke-width="1.6"/><path d="M6 8.2V15.8M8.2 6H14a4 4 0 0 1 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>',
+  architecture:
+    '<rect x="9" y="3" width="6" height="4" rx="1" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="17" width="6" height="4" rx="1" stroke="currentColor" stroke-width="1.6"/><rect x="15" y="17" width="6" height="4" rx="1" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v4M12 11H6v6M12 11h6v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>',
+};
+---
+
+<div class="skill">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" set:html={icons[name]} />
+  <span>{label}</span>
+</div>
+
+<style>
+  .skill {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--text);
+  }
+
+  .skill svg {
+    color: var(--accent-text);
+    flex-shrink: 0;
+  }
+
+  .skill span {
+    font-size: 0.95rem;
+  }
+</style>

@@ -1,0 +1,71 @@
+---
+const links = [
+  { href: 'https://github.com/meenurajapandian', label: 'GitHub', icon: 'fa-brands fa-github' },
+  {
+    href: 'https://www.linkedin.com/in/meenusree-rajapandian/',
+    label: 'LinkedIn',
+    icon: 'fa-brands fa-linkedin',
+  },
+  { href: 'mailto:meenushreeji@gmail.com', label: 'Email', icon: 'fa-solid fa-envelope' },
+  {
+    href: 'https://scholar.google.com/citations?user=Ai6lbC0AAAAJ',
+    label: 'Google Scholar',
+    icon: 'fa-solid fa-graduation-cap',
+  },
+];
+---
+
+<footer>
+  <div class="wrap footer">
+    <span class="mono">&copy; {new Date().getFullYear()} Meenu Rajapandian</span>
+    <ul>
+      {
+        links.map((link) => (
+          <li>
+            <a href={link.href} aria-label={link.label} title={link.label}>
+              <i class={link.icon} aria-hidden="true" />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid var(--border);
+    margin-top: 4rem;
+  }
+
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+  }
+
+  a {
+    display: flex;
+    text-decoration: none;
+    color: var(--text-muted);
+  }
+
+  a:hover {
+    color: var(--accent-text);
+  }
+</style>

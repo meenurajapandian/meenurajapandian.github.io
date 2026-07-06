@@ -1,0 +1,92 @@
+---
+import Expandable from './Expandable.astro';
+import type { WorkEntry } from '../content/data/work';
+
+interface Props {
+  entry: WorkEntry;
+}
+
+const { entry } = Astro.props;
+const current = entry.roles[0];
+const range = `${current.start}–${current.end === 'present' ? 'present' : current.end}`;
+const hasHistory = entry.roles.length > 1 || entry.promotionNote;
+---
+
+<div class="work-entry">
+  <div class="work-head">
+    <h3>{entry.company}</h3>
+    <span class="mono range">{range}</span>
+  </div>
+  <p class="title">{current.title}</p>
+
+  {
+    hasHistory && (
+      <Expandable label="role history">
+        {entry.roles.length > 1 ? (
+          <ul class="roles">
+            {entry.roles.map((role) => (
+              <li>
+                <span>{role.title}</span>
+                <span class="mono">
+                  {role.start}–{role.end === 'present' ? 'present' : role.end}
+                </span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="note">{entry.promotionNote}</p>
+        )}
+      </Expandable>
+    )
+  }
+</div>
+
+<style>
+  .work-entry {
+    margin-bottom: 1.75rem;
+  }
+
+  .work-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .work-head h3 {
+    margin: 0;
+  }
+
+  .range {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .title {
+    color: var(--text-muted);
+    margin: 0.15rem 0 0;
+  }
+
+  .roles {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .roles li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .note {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+</style>

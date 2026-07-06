@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { title, description, date } = post.data;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="wrap page">
+    <a class="mono back" href="/blog/">&larr; all posts</a>
+    <h1>{title}</h1>
+    <p class="mono meta">{date.getFullYear()}</p>
+    <div class="content">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .page {
+    padding-block: clamp(2rem, 6vw, 4rem);
+    max-width: 720px;
+  }
+
+  .back {
+    color: var(--secondary);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+  }
+
+  .meta {
+    color: var(--text-muted);
+  }
+
+  .content {
+    margin-top: 2rem;
+    line-height: 1.7;
+  }
+
+  .content :global(pre) {
+    background: var(--bg-raised);
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+  }
+
+  .content :global(code) {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+  }
+</style>

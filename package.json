@@ -1,0 +1,24 @@
+{
+  "name": "meenurajapandian-site",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "astro": "^7.0.6",
+    "image-size": "^2.0.2",
+    "justified-layout": "^4.1.0"
+  },
+  "devDependencies": {
+    "@tabler/icons": "^3.44.0"
+  }
+}

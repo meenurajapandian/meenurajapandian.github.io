@@ -1,0 +1,224 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+
+:root {
+  --bg: #faf9f4;
+  --bg-raised: #f2f0ea;
+  --text: #1a1a1a;
+  --text-muted: #5c5850;
+  --heading-text: #1a1a1a;
+  --border: rgba(26, 26, 26, 0.12);
+
+  --accent: #882d61;
+  --accent-text: #882d61;
+  --secondary: #b5624a;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --max-width: 1080px;
+  --gap: clamp(1rem, 3vw, 2.5rem);
+  --nav-height: 65px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161315;
+    --bg-raised: #1f1b1e;
+    --text: #f2f0ef;
+    --text-muted: #b0a9ac;
+    --heading-text: #d6d2cf;
+    --border: rgba(242, 240, 239, 0.12);
+
+    --accent: #882d61;
+    --accent-text: #d98bb8;
+    --secondary: #d98a6f;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--heading-text);
+  margin: 0 0 0.5em;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+p {
+  margin: 0 0 1em;
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--accent-text);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  letter-spacing: -0.02em;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-text);
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+  margin: 0 0 0.75em;
+  display: block;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
+  border-radius: 999px;
+  padding: 0.2em 0.7em;
+  display: inline-block;
+  line-height: 1.6;
+}
+
+.button {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.7em 1.4em;
+  border-radius: 8px;
+  display: inline-block;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.button:hover {
+  opacity: 0.85;
+}
+
+.button--primary {
+  background: var(--accent);
+  color: #f2f0ef;
+  font-family: var(--font-mono);
+  font-weight: 400;
+}
+
+.button--primary::before {
+  content: '> ';
+  color: var(--secondary);
+}
+
+.button--ghost {
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gap);
+}
+
+/* Two-column panel primitive, reused on home + about */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: var(--gap);
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Full-height scrolling panels on the home page */
+.panel-scroller {
+  scroll-snap-type: y proximity;
+}
+
+.panel {
+  min-height: calc(100svh - var(--nav-height));
+  display: flex;
+  align-items: center;
+  padding: clamp(2rem, 6vw, 4rem) 0;
+  scroll-snap-align: start;
+}
+
+@media (max-width: 768px) {
+  .panel-scroller {
+    scroll-snap-type: none;
+  }
+
+  .panel {
+    min-height: auto;
+    padding: 3rem 0;
+  }
+}
+
+details.expandable {
+  border-top: 1px solid var(--border);
+  padding-top: 0.75em;
+  margin-top: 0.75em;
+}
+
+details.expandable > summary {
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--secondary);
+  list-style: none;
+}
+
+details.expandable > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.expandable > summary::before {
+  content: '+ ';
+}
+
+details.expandable[open] > summary::before {
+  content: '\2212 ';
+}
+
+details.expandable > summary:hover {
+  color: var(--accent-text);
+}

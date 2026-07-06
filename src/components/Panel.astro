@@ -1,0 +1,49 @@
+---
+interface Props {
+  id?: string;
+  eyebrow?: string;
+  reverse?: boolean;
+  tint?: boolean;
+}
+
+const { id, eyebrow, reverse = false, tint = false } = Astro.props;
+---
+
+<section id={id} class="panel" class:list={[{ tint }]}>
+  <div class="wrap">
+    {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+    <div class="two-col" class:list={[{ reverse }]}>
+      <div class="col col-a">
+        <slot name="a" />
+      </div>
+      <div class="col col-b">
+        <slot name="b" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .tint {
+    background: var(--bg-raised);
+  }
+
+  .two-col.reverse {
+    grid-template-columns: 1.3fr 1fr;
+  }
+
+  .two-col.reverse .col-a {
+    order: 2;
+  }
+
+  .two-col.reverse .col-b {
+    order: 1;
+  }
+
+  @media (max-width: 768px) {
+    .two-col.reverse .col-a,
+    .two-col.reverse .col-b {
+      order: initial;
+    }
+  }
+</style>
